@@ -54,12 +54,22 @@ type Game struct {
 	excitement_index   float64
 }
 
-func main() {
+func collegeFootballData() {
+	req := formatRequest()
+	responseBytes := sendRequest(req)
+	writeToJson(responseBytes)
+}
+
+func apiSettings() string {
 	section := "games"
 	year := "2023"
 	week := "1"
+	return fmt.Sprintf("https://api.collegefootballdata.com/%s?year=%s&week=%s", section, year, week)
+}
+
+func formatRequest() *http.Request {
 	KEY := "RMy62JITIczdOcIcgpVpLhfOsl4BlOFvLWsW/NGM/ZgiCcbL3bRK7JnbISToCImy"
-	URL := fmt.Sprintf("https://api.collegefootballdata.com/%s?year=%s&week=%s", section, year, week)
+	URL := apiSettings()
 	req, err := http.NewRequest(
 		http.MethodGet,
 		URL,
@@ -70,7 +80,10 @@ func main() {
 	}
 	req.Header.Add("Accept", "application/json")
 	req.Header.Add("Authorization", "Bearer "+KEY)
+	return req
+}
 
+func sendRequest(req *http.Request) []byte {
 	res, err := http.DefaultClient.Do(req)
 	if err != nil {
 		log.Fatalf("error sending HTTP request: %v", err)
@@ -79,13 +92,18 @@ func main() {
 	if err != nil {
 		log.Fatalf("error reading HTTP resonse body: %v", err)
 	}
-	err = os.WriteFile("data/2023week1.json", responseBytes, 0666)
+	return responseBytes
+}
+
+func writeToJson(responseBytes []byte) {
+	err := os.WriteFile("data/2023week1.json", responseBytes, 0666)
 	if err != nil {
 		log.Fatal(err)
 	}
+}
 
-	//log.Println("We go the response:", string(responseBytes))
-
+func main() {
+	//collegeFootballData()
 	tmpl := template.Must(template.ParseFiles("index.html"))
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		data := WeekPageData{
