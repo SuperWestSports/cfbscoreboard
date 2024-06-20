@@ -1,55 +1,36 @@
 package main
 
 import (
+	"fmt"
+	"html/template"
+	"log"
+	"net/http"
 )
 
-type Week struct {
-	Title      string
-	WeekNumber int
-	Scoreboard []Game
-}
-
-type WeekPageData struct {
-	PageTitle string
-	Weeks     []Week
-}
-
-type Game struct {
-	id                 int
-	season             int
-	week               int
-	season_type        string
-	start_date         string
-	start_time_tbd     bool
-	completed          bool
-	neutral_site       bool
-	conference_game    bool
-	attendance         int
-	venue_id           int
-	venue              string
-	home_id            int
-	home_team          string
-	home_conference    string
-	home_division      string
-	home_points        int
-	home_line_scores   []int
-	home_post_win_prob float64
-	home_pregame_elo   int
-	home_postgame_elo  int
-	away_id            int
-	away_team          string
-	away_conference    string
-	away_division      string
-	away_points        int
-	away_line_scores   []int
-	away_post_win_prob float64
-	away_pregame_elo   int
-	away_postgame_elo  int
-	excitement_index   float64
-}
-
-
 func main() {
-	//collegeFootballData()
-	createTemplate()
+	prod := false
+	if prod {
+		go fetchData()
+	} else {
+		
+		err := loadSampleData()
+		if err != nil {
+			fmt.Println("Error loading sample data:", err)
+			return
+		}
+	}
+
+	var err error
+		tpl, err = template.ParseFiles("template.html")
+		if err != nil {
+			fmt.Println("Error loading template:", err)
+			return
+		}
+
+	http.HandleFunc("/games", handleGames)
+	log.Println("Server is running on port 8080")
+	err = http.ListenAndServe(":8080", nil)
+	if err != nil {
+		log.Fatalf("Server failed to start: %v", err)
+	}
 }
