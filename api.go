@@ -1,49 +1,17 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
-	"html/template"
-	"log"
-	"net/http"
-	"os"
-	"sync"
-	"time"
 )
 
 func apiSettings() string {
 	section := "games"
 	year := "2023"
 	week := "1"
+	// KEY := "RMy62JITIczdOcIcgpVpLhfOsl4BlOFvLWsW/NGM/ZgiCcbL3bRK7JnbISToCImy"
 	return fmt.Sprintf("https://api.collegefootballdata.com/%s?year=%s&week=%s", section, year, week)
 }
 
-func formatRequest() *http.Request {
-	KEY := "RMy62JITIczdOcIcgpVpLhfOsl4BlOFvLWsW/NGM/ZgiCcbL3bRK7JnbISToCImy"
-	URL := apiSettings()
-	req, err := http.NewRequest(
-		http.MethodGet,
-		URL,
-		nil,
-	)
-	if err != nil {
-		log.Fatalf("error creating HTTP request: %v", err)
-	}
-	req.Header.Add("Accept", "application/json")
-	req.Header.Add("Authorization", "Bearer "+KEY)
-	return req
-}
-
-func sendRequest(req *http.Request) *http.Response {
-	resp, err := http.DefaultClient.Do(req)
-	if err != nil {
-		log.Fatalf("error sending HTTP request: %v", err)
-	}
-	if err != nil {
-		log.Fatalf("error reading HTTP resonse body: %v", err)
-	}
-	return resp
-}
 
 type Game struct {
 	ID             int    `json:"id"`
@@ -81,63 +49,3 @@ type Game struct {
 	//Notes             string    `json:"notes"`
 }
 
-var (
-	gameData []Game
-	//gameData  = make(map[int]Game)
-	dataMutex sync.RWMutex
-	tpl       *template.Template
-)
-
-func fetchData() {
-	for {
-		req := formatRequest()
-		resp := sendRequest(req)
-
-		var games []Game
-		err := json.NewDecoder(resp.Body).Decode(&games)
-		resp.Body.Close()
-		if err != nil {
-			fmt.Println("Error decoding JSON:", err)
-			time.Sleep(1 * time.Minute)
-			continue
-		}
-
-		dataMutex.Lock()
-		for _, game := range games {
-			gameData[game.ID] = game
-		}
-		dataMutex.Unlock()
-
-		time.Sleep(5 * time.Minute) // Adjust the interval as needed
-	}
-}
-
-func loadSampleData() error {
-	data, err := os.ReadFile("data/2023week1.json")
-	if err != nil {
-		return err
-	}
-
-	var games []Game
-	err = json.Unmarshal(data, &games)
-	if err != nil {
-		return err
-	}
-
-	dataMutex.Lock()
-	gameData = games
-	dataMutex.Unlock()
-
-	return nil
-}
-
-func handleGames(w http.ResponseWriter, r *http.Request) {
-	dataMutex.RLock()
-	defer dataMutex.RUnlock()
-
-	w.Header().Set("Content-Type", "text/html")
-	err := tpl.Execute(w, gameData)
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-	}
-}
