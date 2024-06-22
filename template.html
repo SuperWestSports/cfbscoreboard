@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <title>College Football Scoreboard</title>
+  </head>
+  <body>
+    <div id="scoreboard">
+      {{range .}}
+        <div>
+          <strong>{{.HomeTeam}}</strong> {{.HomePoints}} 
+          <strong>{{.AwayTeam}}</strong> {{.AwayPoints}}
+          <br>
+          {{.StartDate}}
+          <br>
+          {{.Venue}}
+          <br>
+          {{if .Completed}}Final{{else}}Scheduled{{end}}
+          <br>
+          Home Conference: {{.HomeConference}}
+          Away Conference: {{.AwayConference}}
+          <br>
+        </div>
+      {{end}}
+    </div>
+  </body> 
+</html>

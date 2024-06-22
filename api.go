@@ -1,16 +1,15 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
+	"log"
+	"net/http"
+	"os"
+	"sync"
+	"text/template"
+	"time"
 )
-
-func apiSettings() string {
-	section := "games"
-	year := "2023"
-	week := "1"
-	// KEY := "RMy62JITIczdOcIcgpVpLhfOsl4BlOFvLWsW/NGM/ZgiCcbL3bRK7JnbISToCImy"
-	return fmt.Sprintf("https://api.collegefootballdata.com/%s?year=%s&week=%s", section, year, week)
-}
 
 
 type Game struct {
@@ -49,3 +48,84 @@ type Game struct {
 	//Notes             string    `json:"notes"`
 }
 
+var (
+	gameData []Game
+	//gameData = make(map[int]Game)
+	dataMutex sync.RWMutex
+	tpl *template.Template
+)
+
+func apiSettings(week string) string {
+	section := "games"
+	year := "2023"
+	return fmt.Sprintf("https://api.collegefootballdata.com/%s?year=%s&week=%s", section, year, week)
+}
+
+func request() *http.Request{
+	KEY := "RMy62JITIczdOcIcgpVpLhfOsl4BlOFvLWsW/NGM/ZgiCcbL3bRK7JnbISToCImy"
+	URL := apiSettings("1")
+	req, err := http.NewRequest("GET", URL, nil)
+	if err != nil {
+		log.Fatal(err)
+		} 
+	req.Header.Add("Accept", "application/json")
+	req.Header.Add("Authorization", "Bearer " + KEY)
+	return req
+}
+
+func response(req *http.Request) *http.Response {
+	resp, err := http.DefaultClient.Do(req)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return resp
+}
+
+func fetch(resp *http.Response) {
+	for {
+		var games []Game
+		err := json.NewDecoder(resp.Body).Decode(&games)
+		if err != nil {
+			fmt.Println("Error decoding JSON", err)
+			time.Sleep(10 * time.Minute)
+			continue
+		}
+
+		dataMutex.Lock()
+		for _, game := range games {
+			gameData[game.ID] = game
+		}
+		dataMutex.Unlock()
+		time.Sleep((5 * time.Minute))
+	}
+}
+
+func loadSample() error {
+	data, err := os.ReadFile("data/2023week1.json")
+	if err != nil {
+		return err
+	}
+
+	var games []Game
+	err = json.Unmarshal(data, &games)
+	if err != nil {
+		return err
+	}
+	
+	dataMutex.Lock()
+	gameData = games
+	dataMutex.Unlock()
+
+	return nil
+}
+
+func handleGames(w http.ResponseWriter, r *http.Request) {
+	dataMutex.RLock()
+	defer dataMutex.RUnlock()
+
+	w.Header().Set("Content-Type", "text/html")
+	err := tpl.Execute(w, gameData)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+}
