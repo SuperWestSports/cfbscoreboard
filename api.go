@@ -3,73 +3,81 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+
+	//"io"
 	"log"
 	"net/http"
 	"os"
+
+	//"path/filepath"
 	"sync"
 	"text/template"
 	"time"
 )
 
+type Venue struct {
+	Name  string `json:"name"`
+	City  string `json:"city"`
+	State string `json:"state"`
+}
+
+type Team struct {
+	ID             int    `json:"id"`
+	Name           string `json:"name"`
+	Conference     string `json:"conference"`
+	Classification string `json:"classification"`
+	Points         int    `json:"points"`
+}
+
+type Weather struct {
+	Temperature   string `json:"temperature"`
+	Description   string  `json:"description"`
+	WindSpeed     string `json:"windSpeed"`
+	WindDirection string `json:"windDirection"`
+}
+
+type Betting struct {
+	Spread        string `json:"spread"`
+	OverUnder     string `json:"overUnder"`
+	HomeMoneyline int     `json:"homeMoneyline"`
+	AwayMoneyline int     `json:"awayMoneyline"`
+}
 
 type Game struct {
-	ID             int    `json:"id"`
-	Season         int    `json:"season"`
-	Week           int    `json:"week"`
-	SeasonType     string `json:"season_type"`
-	StartDate      string `json:"start_date"`
-	StartTimeTBD   bool   `json:"start_time_tbd"`
-	Completed      bool   `json:"completed"`
-	NeutralSite    bool   `json:"neutral_site"`
-	ConferenceGame bool   `json:"conference_game"`
-	//Attendance        int       `json:"attendance"`
-	VenueID        int    `json:"venue_id"`
-	Venue          string `json:"venue"`
-	HomeID         int    `json:"home_id"`
-	HomeTeam       string `json:"home_team"`
-	HomeConference string `json:"home_conference"`
-	HomeDivision   string `json:"home_division"`
-	HomePoints     int    `json:"home_points"`
-	HomeLineScores []int  `json:"home_line_scores"`
-	//HomePostWinProb   float64   `json:"home_post_win_prob"`
-	//HomePregameElo    int       `json:"home_pregame_elo"`
-	//HomePostgameElo   int       `json:"home_postgame_elo"`
-	AwayID         int    `json:"away_id"`
-	AwayTeam       string `json:"away_team"`
-	AwayConference string `json:"away_conference"`
-	AwayDivision   string `json:"away_division"`
-	AwayPoints     int    `json:"away_points"`
-	AwayLineScores []int  `json:"away_line_scores"`
-	//AwayPostWinProb   float64   `json:"away_post_win_prob"`
-	//AwayPregameElo    int       `json:"away_pregame_elo"`
-	//AwayPostgameElo   int       `json:"away_postgame_elo"`
-	//ExcitementIndex   float64   `json:"excitement_index"`
-	//Highlights        string    `json:"highlights"`
-	//Notes             string    `json:"notes"`
+	ID             int     `json:"id"`
+	StartDate      string  `json:"startDate"`
+	StartTimeTBD   bool    `json:"startTimeTBD"`
+	TV             string  `json:"tv"`
+	NeutralSite    bool    `json:"neutralSite"`
+	ConferenceGame bool    `json:"conferenceGame"`
+	Status         string  `json:"status"`
+	Period         int     `json:"period"`
+	Clock          string  `json:"clock"`
+	Situation      string  `json:"situation"`
+	Possession     string  `json:"possession"`
+	Venue          Venue   `json:"venue"`
+	HomeTeam       Team    `json:"homeTeam"`
+	AwayTeam       Team    `json:"awayTeam"`
+	Weather        Weather `json:"weather"`
+	Betting        Betting `json:"betting"`
 }
 
 var (
-	gameData []Game
+	requestUrl = "https://api.collegefootballdata.com/scoreboard"
+	gameData   []Game
 	//gameData = make(map[int]Game)
 	dataMutex sync.RWMutex
-	tpl *template.Template
+	tpl       *template.Template
 )
 
-func apiSettings(week string) string {
-	section := "games"
-	year := "2023"
-	return fmt.Sprintf("https://api.collegefootballdata.com/%s?year=%s&week=%s", section, year, week)
-}
-
-func request() *http.Request{
+func request() *http.Request {
 	KEY := "RMy62JITIczdOcIcgpVpLhfOsl4BlOFvLWsW/NGM/ZgiCcbL3bRK7JnbISToCImy"
-	URL := apiSettings("1")
-	req, err := http.NewRequest("GET", URL, nil)
+	req, err := http.NewRequest("GET", requestUrl, nil)
 	if err != nil {
 		log.Fatal(err)
-		} 
+	}
 	req.Header.Add("Accept", "application/json")
-	req.Header.Add("Authorization", "Bearer " + KEY)
+	req.Header.Add("Authorization", "Bearer "+KEY)
 	return req
 }
 
@@ -78,6 +86,7 @@ func response(req *http.Request) *http.Response {
 	if err != nil {
 		log.Fatal(err)
 	}
+	//writeSample(resp)
 	return resp
 }
 
@@ -100,8 +109,26 @@ func fetch(resp *http.Response) {
 	}
 }
 
+// func writeSample(resp *http.Response) {
+// 	body, err := io.ReadAll(resp.Body)
+// 	if err != nil {
+// 		fmt.Println("Error reading response body:", err)
+// 		return
+// 	}
+// 	err = os.MkdirAll(filepath.Dir("data/scoreboard-preseason.json"), os.ModePerm)
+// 	if err != nil {
+// 		fmt.Println("Error creating directory:", err)
+// 		return
+// 	}
+
+// 	err = os.WriteFile("data/scoreboard-preseason.json", body, 0666)
+// 	if err != nil {
+// 		log.Fatal(err)
+// 	}
+// }
+
 func loadSample() error {
-	data, err := os.ReadFile("data/2023week1.json")
+	data, err := os.ReadFile("data/livegamedata.json")
 	if err != nil {
 		return err
 	}
@@ -109,9 +136,10 @@ func loadSample() error {
 	var games []Game
 	err = json.Unmarshal(data, &games)
 	if err != nil {
+		fmt.Println(err)
 		return err
 	}
-	
+
 	dataMutex.Lock()
 	gameData = games
 	dataMutex.Unlock()

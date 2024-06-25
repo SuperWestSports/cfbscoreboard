@@ -6,18 +6,44 @@
   <body>
     <div id="scoreboard">
       {{range .}}
-        <div>
-          <strong>{{.HomeTeam}}</strong> {{.HomePoints}} 
-          <strong>{{.AwayTeam}}</strong> {{.AwayPoints}}
+        <div id="tile">
+          {{.Status}} 
           <br>
-          {{.StartDate}}
+
+          {{if .StartTimeTBD }} Time TBD 
+          {{else}} {{.StartDate}}
+          {{end}}
           <br>
-          {{.Venue}}
+
+          {{if .TV}} {{.TV}}<br>{{end}}
+
+          {{.HomeTeam.Name}} {{.HomeTeam.Points}}
           <br>
-          {{if .Completed}}Final{{else}}Scheduled{{end}}
+
+          {{.AwayTeam.Name}} {{.AwayTeam.Points}}
           <br>
-          Home Conference: {{.HomeConference}}
-          Away Conference: {{.AwayConference}}
+
+          {{if .Period}} {{.Period}}<br> {{end}} 
+          
+          {{if .Clock}} {{.Clock}}<br> {{end}}
+          
+          {{if .Situation}} {{.Situation}}<br> {{end}}
+          
+          {{if .Possession}} {{.Possession}}<br> {{end}}    
+
+          {{.Venue.Name}}, {{.Venue.City}}, {{.Venue.State}}
+          <br>
+
+          {{if .Weather.Temperature}} {{.Weather.Temperature}}<br> {{end}}
+          
+          {{if .Weather.Description}} {{.Weather.Description}} {{end}}
+          
+          
+          {{if .Betting.Spread}} {{.Betting.Spread}} {{end}}
+          
+          {{if .Betting.OverUnder}} {{.Betting.OverUnder}} {{end}}
+              
+          <br>
           <br>
         </div>
       {{end}}

@@ -1,0 +1,2598 @@
+[
+  {
+    "id": 401531339,
+    "startDate": "2023-09-28T23:30:00.000Z",
+    "startTimeTBD": false,
+    "tv": "ESPN",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "completed",
+    "period": null,
+    "clock": null,
+    "situation": "2nd & 10 at TLSA 41",
+    "possession": "home",
+    "venue": {
+      "name": "Skelly Field at H. A. Chapman Stadium",
+      "city": "Tulsa",
+      "state": "OK"
+    },
+    "homeTeam": {
+      "id": 202,
+      "name": "Tulsa Golden Hurricane",
+      "conference": "American Athletic",
+      "classification": "fbs",
+      "points": 48
+    },
+    "awayTeam": {
+      "id": 218,
+      "name": "Temple Owls",
+      "conference": "American Athletic",
+      "classification": "fbs",
+      "points": 26
+    },
+    "weather": {
+      "temperature": "84.6",
+      "description": "Clear",
+      "windSpeed": "9.2",
+      "windDirection": "130.0"
+    },
+    "betting": {
+      "spread": "-3.5",
+      "overUnder": "54.5",
+      "homeMoneyline": -170,
+      "awayMoneyline": 145
+    }
+  },
+  {
+    "id": 401520277,
+    "startDate": "2023-09-28T23:30:00.000Z",
+    "startTimeTBD": false,
+    "tv": "CBSSN",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "completed",
+    "period": null,
+    "clock": null,
+    "situation": "2nd & 6 at WKU 6",
+    "possession": "home",
+    "venue": {
+      "name": "Houchens Industries-L. T. Smith Stadium",
+      "city": "Bowling Green",
+      "state": "KY"
+    },
+    "homeTeam": {
+      "id": 98,
+      "name": "Western Kentucky Hilltoppers",
+      "conference": "Conference USA",
+      "classification": "fbs",
+      "points": 31
+    },
+    "awayTeam": {
+      "id": 2393,
+      "name": "Middle Tennessee Blue Raiders",
+      "conference": "Conference USA",
+      "classification": "fbs",
+      "points": 10
+    },
+    "weather": {
+      "temperature": "72.1",
+      "description": "Clear",
+      "windSpeed": "5.8",
+      "windDirection": "210.0"
+    },
+    "betting": {
+      "spread": "-5.5",
+      "overUnder": "60.0",
+      "homeMoneyline": -225,
+      "awayMoneyline": 185
+    }
+  },
+  {
+    "id": 401520276,
+    "startDate": "2023-09-29T00:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": "ESPNU",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "completed",
+    "period": null,
+    "clock": null,
+    "situation": "JVST - Two Point Pass",
+    "possession": "away",
+    "venue": {
+      "name": "Bowers Stadium",
+      "city": "Huntsville",
+      "state": "TX"
+    },
+    "homeTeam": {
+      "id": 2534,
+      "name": "Sam Houston State Bearkats",
+      "conference": "Conference USA",
+      "classification": "fbs",
+      "points": 28
+    },
+    "awayTeam": {
+      "id": 55,
+      "name": "Jacksonville State Gamecocks",
+      "conference": "Conference USA",
+      "classification": "fbs",
+      "points": 35
+    },
+    "weather": {
+      "temperature": "87.8",
+      "description": "Fair",
+      "windSpeed": "9.2",
+      "windDirection": "120.0"
+    },
+    "betting": {
+      "spread": "6.5",
+      "overUnder": "36.0",
+      "homeMoneyline": 210,
+      "awayMoneyline": -250
+    }
+  },
+  {
+    "id": 401525512,
+    "startDate": "2023-09-29T23:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": "ESPN",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "completed",
+    "period": null,
+    "clock": null,
+    "situation": "3rd & 12 at NCSU 28",
+    "possession": "away",
+    "venue": {
+      "name": "Carter-Finley Stadium",
+      "city": "Raleigh",
+      "state": "NC"
+    },
+    "homeTeam": {
+      "id": 152,
+      "name": "NC State Wolfpack",
+      "conference": "ACC",
+      "classification": "fbs",
+      "points": 10
+    },
+    "awayTeam": {
+      "id": 97,
+      "name": "Louisville Cardinals",
+      "conference": "ACC",
+      "classification": "fbs",
+      "points": 13
+    },
+    "weather": {
+      "temperature": "66.2",
+      "description": "Fair",
+      "windSpeed": "0.0",
+      "windDirection": "0.0"
+    },
+    "betting": {
+      "spread": "3.0",
+      "overUnder": "55.5",
+      "homeMoneyline": 145,
+      "awayMoneyline": -170
+    }
+  },
+  {
+    "id": 401524020,
+    "startDate": "2023-09-30T01:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": "FS1",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "completed",
+    "period": null,
+    "clock": null,
+    "situation": "1st & 10 at UTAH 22",
+    "possession": "away",
+    "venue": {
+      "name": "Reser Stadium",
+      "city": "Corvallis",
+      "state": "OR"
+    },
+    "homeTeam": {
+      "id": 204,
+      "name": "Oregon State Beavers",
+      "conference": "Pac-12",
+      "classification": "fbs",
+      "points": 21
+    },
+    "awayTeam": {
+      "id": 254,
+      "name": "Utah Utes",
+      "conference": "Pac-12",
+      "classification": "fbs",
+      "points": 7
+    },
+    "weather": {
+      "temperature": "59.4",
+      "description": "Cloudy",
+      "windSpeed": "7.4",
+      "windDirection": "356.0"
+    },
+    "betting": {
+      "spread": "-3.0",
+      "overUnder": "44.5",
+      "homeMoneyline": -150,
+      "awayMoneyline": 130
+    }
+  },
+  {
+    "id": 401520278,
+    "startDate": "2023-09-30T01:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": "CBSSN",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "completed",
+    "period": null,
+    "clock": null,
+    "situation": "2nd & Goal at LT 4",
+    "possession": "home",
+    "venue": {
+      "name": "Sun Bowl Stadium",
+      "city": "El Paso",
+      "state": "TX"
+    },
+    "homeTeam": {
+      "id": 2638,
+      "name": "UTEP Miners",
+      "conference": "Conference USA",
+      "classification": "fbs",
+      "points": 10
+    },
+    "awayTeam": {
+      "id": 2348,
+      "name": "Louisiana Tech Bulldogs",
+      "conference": "Conference USA",
+      "classification": "fbs",
+      "points": 24
+    },
+    "weather": {
+      "temperature": "89.2",
+      "description": "Fair",
+      "windSpeed": "5.8",
+      "windDirection": "220.0"
+    },
+    "betting": {
+      "spread": "1.0",
+      "overUnder": "52.5",
+      "homeMoneyline": -110,
+      "awayMoneyline": -110
+    }
+  },
+  {
+    "id": 401525851,
+    "startDate": "2023-09-30T02:15:00.000Z",
+    "startTimeTBD": false,
+    "tv": "ESPN",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "completed",
+    "period": null,
+    "clock": null,
+    "situation": "CIN - Extra Point Good",
+    "possession": "away",
+    "venue": {
+      "name": "LaVell Edwards Stadium",
+      "city": "Provo",
+      "state": "UT"
+    },
+    "homeTeam": {
+      "id": 252,
+      "name": "BYU Cougars",
+      "conference": "Big 12",
+      "classification": "fbs",
+      "points": 35
+    },
+    "awayTeam": {
+      "id": 2132,
+      "name": "Cincinnati Bearcats",
+      "conference": "Big 12",
+      "classification": "fbs",
+      "points": 27
+    },
+    "weather": {
+      "temperature": "65.7",
+      "description": "Clear",
+      "windSpeed": "10.6",
+      "windDirection": "150.0"
+    },
+    "betting": {
+      "spread": "-2.5",
+      "overUnder": "48.0",
+      "homeMoneyline": -135,
+      "awayMoneyline": 115
+    }
+  },
+  {
+    "id": 401532412,
+    "startDate": "2023-09-30T16:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": null,
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "in_progress",
+    "period": 2,
+    "clock": "00:00:00",
+    "situation": "AKR - Field Goal Good",
+    "possession": "home",
+    "venue": {
+      "name": "Summa Field at InfoCision Stadium",
+      "city": "Akron",
+      "state": "OH"
+    },
+    "homeTeam": {
+      "id": 2006,
+      "name": "Akron Zips",
+      "conference": "Mid-American",
+      "classification": "fbs",
+      "points": 10
+    },
+    "awayTeam": {
+      "id": 2084,
+      "name": "Buffalo Bulls",
+      "conference": "Mid-American",
+      "classification": "fbs",
+      "points": 7
+    },
+    "weather": {
+      "temperature": "72.9",
+      "description": "Clear",
+      "windSpeed": "6.0",
+      "windDirection": "46.0"
+    },
+    "betting": {
+      "spread": "-2.5",
+      "overUnder": "55.5",
+      "homeMoneyline": -140,
+      "awayMoneyline": 120
+    }
+  },
+  {
+    "id": 401524023,
+    "startDate": "2023-09-30T16:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": "FOX",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "in_progress",
+    "period": 2,
+    "clock": "00:05:22",
+    "situation": "1st & 10 at USC 26",
+    "possession": "home",
+    "venue": {
+      "name": "Folsom Field",
+      "city": "Boulder",
+      "state": "CO"
+    },
+    "homeTeam": {
+      "id": 38,
+      "name": "Colorado Buffaloes",
+      "conference": "Pac-12",
+      "classification": "fbs",
+      "points": 7
+    },
+    "awayTeam": {
+      "id": 30,
+      "name": "USC Trojans",
+      "conference": "Pac-12",
+      "classification": "fbs",
+      "points": 27
+    },
+    "weather": {
+      "temperature": "64.6",
+      "description": "Cloudy",
+      "windSpeed": "3.6",
+      "windDirection": "69.0"
+    },
+    "betting": {
+      "spread": "21.5",
+      "overUnder": "74.5",
+      "homeMoneyline": 750,
+      "awayMoneyline": -1400
+    }
+  },
+  {
+    "id": 401520292,
+    "startDate": "2023-09-30T16:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": "CBSSN",
+    "neutralSite": false,
+    "conferenceGame": false,
+    "status": "in_progress",
+    "period": 2,
+    "clock": "00:00:14",
+    "situation": "USU - Passing Touchdown",
+    "possession": "away",
+    "venue": {
+      "name": "Rentschler Field",
+      "city": "East Hartford",
+      "state": "CT"
+    },
+    "homeTeam": {
+      "id": 41,
+      "name": "Connecticut Huskies",
+      "conference": "FBS Independents",
+      "classification": "fbs",
+      "points": 17
+    },
+    "awayTeam": {
+      "id": 328,
+      "name": "Utah State Aggies",
+      "conference": "Mountain West",
+      "classification": "fbs",
+      "points": 6
+    },
+    "weather": {
+      "temperature": "54.7",
+      "description": "Heavy Rain",
+      "windSpeed": "12.1",
+      "windDirection": "11.0"
+    },
+    "betting": {
+      "spread": "4.5",
+      "overUnder": "51.0",
+      "homeMoneyline": 165,
+      "awayMoneyline": -195
+    }
+  },
+  {
+    "id": 401531370,
+    "startDate": "2023-09-30T16:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": "ESPN2",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "in_progress",
+    "period": 2,
+    "clock": "00:00:46",
+    "situation": "TULN - Rushing Touchdown",
+    "possession": "home",
+    "venue": {
+      "name": "Benson Field at Yulman Stadium",
+      "city": "New Orleans",
+      "state": "LA"
+    },
+    "homeTeam": {
+      "id": 2655,
+      "name": "Tulane Green Wave",
+      "conference": "American Athletic",
+      "classification": "fbs",
+      "points": 13
+    },
+    "awayTeam": {
+      "id": 5,
+      "name": "UAB Blazers",
+      "conference": "American Athletic",
+      "classification": "fbs",
+      "points": 20
+    },
+    "weather": {
+      "temperature": "83.3",
+      "description": "Clear",
+      "windSpeed": "17.0",
+      "windDirection": "75.0"
+    },
+    "betting": {
+      "spread": "-22.0",
+      "overUnder": "57.0",
+      "homeMoneyline": -1400,
+      "awayMoneyline": 750
+    }
+  },
+  {
+    "id": 401520284,
+    "startDate": "2023-09-30T16:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": "BTN",
+    "neutralSite": false,
+    "conferenceGame": false,
+    "status": "in_progress",
+    "period": 2,
+    "clock": "00:00:00",
+    "situation": "",
+    "possession": "away",
+    "venue": {
+      "name": "TCF Bank Stadium",
+      "city": "Minneapolis",
+      "state": "MN"
+    },
+    "homeTeam": {
+      "id": 135,
+      "name": "Minnesota Golden Gophers",
+      "conference": "Big Ten",
+      "classification": "fbs",
+      "points": 14
+    },
+    "awayTeam": {
+      "id": 309,
+      "name": "Louisiana Ragin' Cajuns",
+      "conference": "Sun Belt",
+      "classification": "fbs",
+      "points": 17
+    },
+    "weather": {
+      "temperature": "73.9",
+      "description": "Cloudy",
+      "windSpeed": "4.7",
+      "windDirection": "173.0"
+    },
+    "betting": {
+      "spread": "-10.0",
+      "overUnder": "47.5",
+      "homeMoneyline": null,
+      "awayMoneyline": null
+    }
+  },
+  {
+    "id": 401531880,
+    "startDate": "2023-09-30T16:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": "ESPNU",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "in_progress",
+    "period": 2,
+    "clock": "00:06:10",
+    "situation": "JMU - Field Goal Good",
+    "possession": "home",
+    "venue": {
+      "name": "Bridgeforth Stadium",
+      "city": "Harrisonburg",
+      "state": "VA"
+    },
+    "homeTeam": {
+      "id": 256,
+      "name": "James Madison Dukes",
+      "conference": "Sun Belt",
+      "classification": "fbs",
+      "points": 17
+    },
+    "awayTeam": {
+      "id": 6,
+      "name": "South Alabama Jaguars",
+      "conference": "Sun Belt",
+      "classification": "fbs",
+      "points": 0
+    },
+    "weather": {
+      "temperature": "71.1",
+      "description": "Fair",
+      "windSpeed": "9.6",
+      "windDirection": "19.0"
+    },
+    "betting": {
+      "spread": "-3.5",
+      "overUnder": "52.0",
+      "homeMoneyline": -165,
+      "awayMoneyline": 140
+    }
+  },
+  {
+    "id": 401520282,
+    "startDate": "2023-09-30T16:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": "ESPN",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "in_progress",
+    "period": 2,
+    "clock": "00:03:41",
+    "situation": "2nd & 10 at UK 34",
+    "possession": "home",
+    "venue": {
+      "name": "Commonwealth Stadium",
+      "city": "Lexington",
+      "state": "KY"
+    },
+    "homeTeam": {
+      "id": 96,
+      "name": "Kentucky Wildcats",
+      "conference": "SEC",
+      "classification": "fbs",
+      "points": 23
+    },
+    "awayTeam": {
+      "id": 57,
+      "name": "Florida Gators",
+      "conference": "SEC",
+      "classification": "fbs",
+      "points": 0
+    },
+    "weather": {
+      "temperature": "76.8",
+      "description": "Clear",
+      "windSpeed": "5.6",
+      "windDirection": "43.0"
+    },
+    "betting": {
+      "spread": "-2.5",
+      "overUnder": "46.5",
+      "homeMoneyline": -140,
+      "awayMoneyline": 120
+    }
+  },
+  {
+    "id": 401520279,
+    "startDate": "2023-09-30T16:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": "SECN",
+    "neutralSite": true,
+    "conferenceGame": true,
+    "status": "in_progress",
+    "period": 2,
+    "clock": "00:00:00",
+    "situation": "2nd & 4 at ARK 31",
+    "possession": "home",
+    "venue": {
+      "name": "AT&T Stadium",
+      "city": "Arlington",
+      "state": "TX"
+    },
+    "homeTeam": {
+      "id": 8,
+      "name": "Arkansas Razorbacks",
+      "conference": "SEC",
+      "classification": "fbs",
+      "points": 6
+    },
+    "awayTeam": {
+      "id": 245,
+      "name": "Texas A&M Aggies",
+      "conference": "SEC",
+      "classification": "fbs",
+      "points": 17
+    },
+    "weather": {
+      "temperature": "87.4",
+      "description": "Clear",
+      "windSpeed": "9.4",
+      "windDirection": "179.0"
+    },
+    "betting": {
+      "spread": "6.5",
+      "overUnder": "54.5",
+      "homeMoneyline": 210,
+      "awayMoneyline": -250
+    }
+  },
+  {
+    "id": 401520287,
+    "startDate": "2023-09-30T16:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": "BTN",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "in_progress",
+    "period": 2,
+    "clock": "00:00:00",
+    "situation": "",
+    "possession": "away",
+    "venue": {
+      "name": "Ryan Field",
+      "city": "Evanston",
+      "state": "IL"
+    },
+    "homeTeam": {
+      "id": 77,
+      "name": "Northwestern Wildcats",
+      "conference": "Big Ten",
+      "classification": "fbs",
+      "points": 10
+    },
+    "awayTeam": {
+      "id": 213,
+      "name": "Penn State Nittany Lions",
+      "conference": "Big Ten",
+      "classification": "fbs",
+      "points": 10
+    },
+    "weather": {
+      "temperature": "73.6",
+      "description": "Clear",
+      "windSpeed": "8.9",
+      "windDirection": "170.0"
+    },
+    "betting": {
+      "spread": "25.5",
+      "overUnder": "46.0",
+      "homeMoneyline": 1100,
+      "awayMoneyline": -3300
+    }
+  },
+  {
+    "id": 401525514,
+    "startDate": "2023-09-30T16:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": "ABC",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "in_progress",
+    "period": 2,
+    "clock": "00:03:36",
+    "situation": "4th & 11 at CLEM 39",
+    "possession": "home",
+    "venue": {
+      "name": "Carrier Dome",
+      "city": "Syracuse",
+      "state": "NY"
+    },
+    "homeTeam": {
+      "id": 183,
+      "name": "Syracuse Orange",
+      "conference": "ACC",
+      "classification": "fbs",
+      "points": 7
+    },
+    "awayTeam": {
+      "id": 228,
+      "name": "Clemson Tigers",
+      "conference": "ACC",
+      "classification": "fbs",
+      "points": 14
+    },
+    "weather": {
+      "temperature": "68.7",
+      "description": "Cloudy",
+      "windSpeed": "4.6",
+      "windDirection": "326.0"
+    },
+    "betting": {
+      "spread": "7.0",
+      "overUnder": "53.5",
+      "homeMoneyline": 220,
+      "awayMoneyline": -270
+    }
+  },
+  {
+    "id": 401532410,
+    "startDate": "2023-09-30T17:30:00.000Z",
+    "startTimeTBD": false,
+    "tv": null,
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Kelly/Shorts Stadium",
+      "city": "Mount Pleasant",
+      "state": "MI"
+    },
+    "homeTeam": {
+      "id": 2117,
+      "name": "Central Michigan Chippewas",
+      "conference": "Mid-American",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 2199,
+      "name": "Eastern Michigan Eagles",
+      "conference": "Mid-American",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "74.5",
+      "description": "Clear",
+      "windSpeed": "4.5",
+      "windDirection": "175.0"
+    },
+    "betting": {
+      "spread": "-7.5",
+      "overUnder": "47.5",
+      "homeMoneyline": -300,
+      "awayMoneyline": 250
+    }
+  },
+  {
+    "id": 401525513,
+    "startDate": "2023-09-30T18:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": "CW NETWORK",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Alumni Stadium",
+      "city": "Chestnut Hill",
+      "state": "MA"
+    },
+    "homeTeam": {
+      "id": 103,
+      "name": "Boston College Eagles",
+      "conference": "ACC",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 258,
+      "name": "Virginia Cavaliers",
+      "conference": "ACC",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "61.9",
+      "description": "Rain",
+      "windSpeed": "13.8",
+      "windDirection": "42.0"
+    },
+    "betting": {
+      "spread": "-3.0",
+      "overUnder": "55.0",
+      "homeMoneyline": -160,
+      "awayMoneyline": 135
+    }
+  },
+  {
+    "id": 401532413,
+    "startDate": "2023-09-30T18:30:00.000Z",
+    "startTimeTBD": false,
+    "tv": null,
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Dix Stadium",
+      "city": "Kent",
+      "state": "OH"
+    },
+    "homeTeam": {
+      "id": 2309,
+      "name": "Kent State Golden Flashes",
+      "conference": "Mid-American",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 193,
+      "name": "Miami (OH) RedHawks",
+      "conference": "Mid-American",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "75.9",
+      "description": "Cloudy",
+      "windSpeed": "3.8",
+      "windDirection": "41.0"
+    },
+    "betting": {
+      "spread": "14.5",
+      "overUnder": "49.5",
+      "homeMoneyline": 430,
+      "awayMoneyline": -625
+    }
+  },
+  {
+    "id": 401524022,
+    "startDate": "2023-09-30T19:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": "PAC12",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "California Memorial Stadium",
+      "city": "Berkeley",
+      "state": "CA"
+    },
+    "homeTeam": {
+      "id": 25,
+      "name": "California Golden Bears",
+      "conference": "Pac-12",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 9,
+      "name": "Arizona State Sun Devils",
+      "conference": "Pac-12",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "63.3",
+      "description": "Fair",
+      "windSpeed": "9.2",
+      "windDirection": "185.0"
+    },
+    "betting": {
+      "spread": "-11.5",
+      "overUnder": "49.5",
+      "homeMoneyline": -440,
+      "awayMoneyline": 330
+    }
+  },
+  {
+    "id": 401525854,
+    "startDate": "2023-09-30T19:30:00.000Z",
+    "startTimeTBD": false,
+    "tv": "ABC",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Darrell K Royal-Texas Memorial Stadium",
+      "city": "Austin",
+      "state": "TX"
+    },
+    "homeTeam": {
+      "id": 251,
+      "name": "Texas Longhorns",
+      "conference": "Big 12",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 2305,
+      "name": "Kansas Jayhawks",
+      "conference": "Big 12",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "91.9",
+      "description": "Fair",
+      "windSpeed": "6.9",
+      "windDirection": "113.0"
+    },
+    "betting": {
+      "spread": "-17.0",
+      "overUnder": "63.0",
+      "homeMoneyline": -800,
+      "awayMoneyline": 525
+    }
+  },
+  {
+    "id": 401531424,
+    "startDate": "2023-09-30T19:30:00.000Z",
+    "startTimeTBD": false,
+    "tv": "CBSSN",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Navy-Marine Corps Memorial Stadium",
+      "city": "Annapolis",
+      "state": "MD"
+    },
+    "homeTeam": {
+      "id": 2426,
+      "name": "Navy Midshipmen",
+      "conference": "American Athletic",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 58,
+      "name": "South Florida Bulls",
+      "conference": "American Athletic",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "72.5",
+      "description": "Cloudy",
+      "windSpeed": "13.4",
+      "windDirection": "14.0"
+    },
+    "betting": {
+      "spread": "-4.0",
+      "overUnder": "54.5",
+      "homeMoneyline": -185,
+      "awayMoneyline": 160
+    }
+  },
+  {
+    "id": 401526836,
+    "startDate": "2023-09-30T19:30:00.000Z",
+    "startTimeTBD": false,
+    "tv": null,
+    "neutralSite": false,
+    "conferenceGame": false,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Warren McGuirk Alumni Stadium",
+      "city": "Hadley",
+      "state": "MA"
+    },
+    "homeTeam": {
+      "id": 113,
+      "name": "UMass Minutemen",
+      "conference": "FBS Independents",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 2032,
+      "name": "Arkansas State Red Wolves",
+      "conference": "Sun Belt",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "61.7",
+      "description": "Cloudy",
+      "windSpeed": "8.1",
+      "windDirection": "29.0"
+    },
+    "betting": {
+      "spread": "-1.5",
+      "overUnder": "55.0",
+      "homeMoneyline": -120,
+      "awayMoneyline": 100
+    }
+  },
+  {
+    "id": 401525856,
+    "startDate": "2023-09-30T19:30:00.000Z",
+    "startTimeTBD": false,
+    "tv": "FS1",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Bright House Networks Stadium",
+      "city": "Orlando",
+      "state": "FL"
+    },
+    "homeTeam": {
+      "id": 2116,
+      "name": "UCF Knights",
+      "conference": "Big 12",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 239,
+      "name": "Baylor Bears",
+      "conference": "Big 12",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "79.0",
+      "description": "Rain",
+      "windSpeed": "8.9",
+      "windDirection": "26.0"
+    },
+    "betting": {
+      "spread": "-11.5",
+      "overUnder": "56.0",
+      "homeMoneyline": -450,
+      "awayMoneyline": 335
+    }
+  },
+  {
+    "id": 401525855,
+    "startDate": "2023-09-30T19:30:00.000Z",
+    "startTimeTBD": false,
+    "tv": "FS2",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Jones AT&T Stadium",
+      "city": "Lubbock",
+      "state": "TX"
+    },
+    "homeTeam": {
+      "id": 2641,
+      "name": "Texas Tech Red Raiders",
+      "conference": "Big 12",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 248,
+      "name": "Houston Cougars",
+      "conference": "Big 12",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "87.8",
+      "description": "Fair",
+      "windSpeed": "11.5",
+      "windDirection": "188.0"
+    },
+    "betting": {
+      "spread": "-10.0",
+      "overUnder": "51.5",
+      "homeMoneyline": -390,
+      "awayMoneyline": 295
+    }
+  },
+  {
+    "id": 401525515,
+    "startDate": "2023-09-30T19:30:00.000Z",
+    "startTimeTBD": false,
+    "tv": "ACCN",
+    "neutralSite": false,
+    "conferenceGame": false,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Bobby Dodd Stadium at Historic Grant Field",
+      "city": "Atlanta",
+      "state": "GA"
+    },
+    "homeTeam": {
+      "id": 59,
+      "name": "Georgia Tech Yellow Jackets",
+      "conference": "ACC",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 189,
+      "name": "Bowling Green Falcons",
+      "conference": "Mid-American",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "83.8",
+      "description": "Fair",
+      "windSpeed": "4.2",
+      "windDirection": "105.0"
+    },
+    "betting": {
+      "spread": "-22.5",
+      "overUnder": "52.5",
+      "homeMoneyline": -1200,
+      "awayMoneyline": 700
+    }
+  },
+  {
+    "id": 401520290,
+    "startDate": "2023-09-30T19:30:00.000Z",
+    "startTimeTBD": false,
+    "tv": "BTN",
+    "neutralSite": false,
+    "conferenceGame": false,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "SHI Stadium",
+      "city": "Piscataway",
+      "state": "NJ"
+    },
+    "homeTeam": {
+      "id": 164,
+      "name": "Rutgers Scarlet Knights",
+      "conference": "Big Ten",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 2681,
+      "name": "Wagner Seahawks",
+      "conference": "NEC",
+      "classification": "fcs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "64.8",
+      "description": "Cloudy",
+      "windSpeed": "11.4",
+      "windDirection": "356.0"
+    },
+    "betting": {
+      "spread": null,
+      "overUnder": null,
+      "homeMoneyline": null,
+      "awayMoneyline": null
+    }
+  },
+  {
+    "id": 401520289,
+    "startDate": "2023-09-30T19:30:00.000Z",
+    "startTimeTBD": false,
+    "tv": null,
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Ross-Ade Stadium",
+      "city": "West Lafayette",
+      "state": "IN"
+    },
+    "homeTeam": {
+      "id": 2509,
+      "name": "Purdue Boilermakers",
+      "conference": "Big Ten",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 356,
+      "name": "Illinois Fighting Illini",
+      "conference": "Big Ten",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "79.7",
+      "description": "Clear",
+      "windSpeed": "4.5",
+      "windDirection": "102.0"
+    },
+    "betting": {
+      "spread": "-1.0",
+      "overUnder": "53.0",
+      "homeMoneyline": -115,
+      "awayMoneyline": -105
+    }
+  },
+  {
+    "id": 401532411,
+    "startDate": "2023-09-30T19:30:00.000Z",
+    "startTimeTBD": false,
+    "tv": "ESPNU",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Glass Bowl",
+      "city": "Toledo",
+      "state": "OH"
+    },
+    "homeTeam": {
+      "id": 2649,
+      "name": "Toledo Rockets",
+      "conference": "Mid-American",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 2459,
+      "name": "Northern Illinois Huskies",
+      "conference": "Mid-American",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "75.2",
+      "description": "Cloudy",
+      "windSpeed": "6.3",
+      "windDirection": "74.0"
+    },
+    "betting": {
+      "spread": "-13.5",
+      "overUnder": "50.0",
+      "homeMoneyline": -525,
+      "awayMoneyline": 375
+    }
+  },
+  {
+    "id": 401532409,
+    "startDate": "2023-09-30T19:30:00.000Z",
+    "startTimeTBD": false,
+    "tv": null,
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Waldo Stadium",
+      "city": "Kalamazoo",
+      "state": "MI"
+    },
+    "homeTeam": {
+      "id": 2711,
+      "name": "Western Michigan Broncos",
+      "conference": "Mid-American",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 2050,
+      "name": "Ball State Cardinals",
+      "conference": "Mid-American",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "75.7",
+      "description": "Clear",
+      "windSpeed": "6.0",
+      "windDirection": "165.0"
+    },
+    "betting": {
+      "spread": "-1.0",
+      "overUnder": "52.0",
+      "homeMoneyline": -115,
+      "awayMoneyline": -105
+    }
+  },
+  {
+    "id": 401531881,
+    "startDate": "2023-09-30T19:30:00.000Z",
+    "startTimeTBD": false,
+    "tv": null,
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Joan C. Edwards Stadium",
+      "city": "Huntington",
+      "state": "WV"
+    },
+    "homeTeam": {
+      "id": 276,
+      "name": "Marshall Thundering Herd",
+      "conference": "Sun Belt",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 295,
+      "name": "Old Dominion Monarchs",
+      "conference": "Sun Belt",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "79.5",
+      "description": "Fair",
+      "windSpeed": "4.5",
+      "windDirection": "57.0"
+    },
+    "betting": {
+      "spread": "-14.0",
+      "overUnder": "47.0",
+      "homeMoneyline": -585,
+      "awayMoneyline": 410
+    }
+  },
+  {
+    "id": 401520286,
+    "startDate": "2023-09-30T19:30:00.000Z",
+    "startTimeTBD": false,
+    "tv": "FOX",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Memorial Stadium",
+      "city": "Lincoln",
+      "state": "NE"
+    },
+    "homeTeam": {
+      "id": 158,
+      "name": "Nebraska Cornhuskers",
+      "conference": "Big Ten",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 130,
+      "name": "Michigan Wolverines",
+      "conference": "Big Ten",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "93.9",
+      "description": "Clear",
+      "windSpeed": "17.2",
+      "windDirection": "172.0"
+    },
+    "betting": {
+      "spread": "17.5",
+      "overUnder": "40.0",
+      "homeMoneyline": 575,
+      "awayMoneyline": -900
+    }
+  },
+  {
+    "id": 401520283,
+    "startDate": "2023-09-30T19:30:00.000Z",
+    "startTimeTBD": false,
+    "tv": "BTN",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Maryland Stadium",
+      "city": "College Park",
+      "state": "MD"
+    },
+    "homeTeam": {
+      "id": 120,
+      "name": "Maryland Terrapins",
+      "conference": "Big Ten",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 84,
+      "name": "Indiana Hoosiers",
+      "conference": "Big Ten",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "73.2",
+      "description": "Cloudy",
+      "windSpeed": "8.7",
+      "windDirection": "23.0"
+    },
+    "betting": {
+      "spread": "-14.0",
+      "overUnder": "50.0",
+      "homeMoneyline": -625,
+      "awayMoneyline": 430
+    }
+  },
+  {
+    "id": 401520280,
+    "startDate": "2023-09-30T19:30:00.000Z",
+    "startTimeTBD": false,
+    "tv": "CBS",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Jordan-Hare Stadium",
+      "city": "Auburn",
+      "state": "AL"
+    },
+    "homeTeam": {
+      "id": 2,
+      "name": "Auburn Tigers",
+      "conference": "SEC",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 61,
+      "name": "Georgia Bulldogs",
+      "conference": "SEC",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "87.8",
+      "description": "Cloudy",
+      "windSpeed": "6.5",
+      "windDirection": "69.0"
+    },
+    "betting": {
+      "spread": "14.5",
+      "overUnder": "47.0",
+      "homeMoneyline": 475,
+      "awayMoneyline": -700
+    }
+  },
+  {
+    "id": 401532588,
+    "startDate": "2023-09-30T20:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": null,
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "War Memorial Stadium",
+      "city": "Laramie",
+      "state": "WY"
+    },
+    "homeTeam": {
+      "id": 2751,
+      "name": "Wyoming Cowboys",
+      "conference": "Mountain West",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 167,
+      "name": "New Mexico Lobos",
+      "conference": "Mountain West",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "75.2",
+      "description": "Cloudy",
+      "windSpeed": "15.7",
+      "windDirection": "215.0"
+    },
+    "betting": {
+      "spread": "-14.0",
+      "overUnder": "41.0",
+      "homeMoneyline": null,
+      "awayMoneyline": null
+    }
+  },
+  {
+    "id": 401531429,
+    "startDate": "2023-09-30T20:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": "ESPN2",
+    "neutralSite": false,
+    "conferenceGame": false,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Liberty Bowl Memorial Stadium",
+      "city": "Memphis",
+      "state": "TN"
+    },
+    "homeTeam": {
+      "id": 235,
+      "name": "Memphis Tigers",
+      "conference": "American Athletic",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 68,
+      "name": "Boise State Broncos",
+      "conference": "Mountain West",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "90.7",
+      "description": "Fair",
+      "windSpeed": "8.1",
+      "windDirection": "39.0"
+    },
+    "betting": {
+      "spread": "-3.5",
+      "overUnder": "59.5",
+      "homeMoneyline": -170,
+      "awayMoneyline": 145
+    }
+  },
+  {
+    "id": 401520293,
+    "startDate": "2023-09-30T20:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": "SECN",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Vanderbilt Stadium",
+      "city": "Nashville",
+      "state": "TN"
+    },
+    "homeTeam": {
+      "id": 238,
+      "name": "Vanderbilt Commodores",
+      "conference": "SEC",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 142,
+      "name": "Missouri Tigers",
+      "conference": "SEC",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "84.6",
+      "description": "Clear",
+      "windSpeed": "4.7",
+      "windDirection": "85.0"
+    },
+    "betting": {
+      "spread": "13.5",
+      "overUnder": "56.0",
+      "homeMoneyline": 390,
+      "awayMoneyline": -550
+    }
+  },
+  {
+    "id": 401532586,
+    "startDate": "2023-09-30T20:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": null,
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Allegiant Stadium",
+      "city": "Las Vegas",
+      "state": "NV"
+    },
+    "homeTeam": {
+      "id": 2439,
+      "name": "UNLV Rebels",
+      "conference": "Mountain West",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 62,
+      "name": "Hawai'i Rainbow Warriors",
+      "conference": "Mountain West",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": null,
+      "description": null,
+      "windSpeed": null,
+      "windDirection": null
+    },
+    "betting": {
+      "spread": "-11.0",
+      "overUnder": "59.0",
+      "homeMoneyline": -440,
+      "awayMoneyline": 330
+    }
+  },
+  {
+    "id": 401520288,
+    "startDate": "2023-09-30T22:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": "ESPN",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Vaught-Hemingway Stadium",
+      "city": "Oxford",
+      "state": "MS"
+    },
+    "homeTeam": {
+      "id": 145,
+      "name": "Ole Miss Rebels",
+      "conference": "SEC",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 99,
+      "name": "LSU Tigers",
+      "conference": "SEC",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "88.7",
+      "description": "Fair",
+      "windSpeed": "5.3",
+      "windDirection": "11.0"
+    },
+    "betting": {
+      "spread": "3.0",
+      "overUnder": "65.5",
+      "homeMoneyline": 130,
+      "awayMoneyline": -150
+    }
+  },
+  {
+    "id": 401524024,
+    "startDate": "2023-09-30T22:30:00.000Z",
+    "startTimeTBD": false,
+    "tv": "PAC12",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Stanford Stadium",
+      "city": "Stanford",
+      "state": "CA"
+    },
+    "homeTeam": {
+      "id": 24,
+      "name": "Stanford Cardinal",
+      "conference": "Pac-12",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 2483,
+      "name": "Oregon Ducks",
+      "conference": "Pac-12",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "65.7",
+      "description": "Cloudy",
+      "windSpeed": "7.6",
+      "windDirection": "272.0"
+    },
+    "betting": {
+      "spread": "27.0",
+      "overUnder": "61.0",
+      "homeMoneyline": 1200,
+      "awayMoneyline": -4000
+    }
+  },
+  {
+    "id": 401532585,
+    "startDate": "2023-09-30T23:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": null,
+    "neutralSite": false,
+    "conferenceGame": false,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Canvas Stadium",
+      "city": "Fort Collins",
+      "state": "CO"
+    },
+    "homeTeam": {
+      "id": 36,
+      "name": "Colorado State Rams",
+      "conference": "Mountain West",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 3101,
+      "name": "Utah Tech Trailblazers",
+      "conference": "UAC",
+      "classification": "fcs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "80.4",
+      "description": "Cloudy",
+      "windSpeed": "3.6",
+      "windDirection": "253.0"
+    },
+    "betting": {
+      "spread": null,
+      "overUnder": null,
+      "homeMoneyline": null,
+      "awayMoneyline": null
+    }
+  },
+  {
+    "id": 401531436,
+    "startDate": "2023-09-30T23:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": null,
+    "neutralSite": false,
+    "conferenceGame": false,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Apogee Stadium",
+      "city": "Denton",
+      "state": "TX"
+    },
+    "homeTeam": {
+      "id": 249,
+      "name": "North Texas Mean Green",
+      "conference": "American Athletic",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 2000,
+      "name": "Abilene Christian Wildcats",
+      "conference": "UAC",
+      "classification": "fcs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "91.6",
+      "description": "Clear",
+      "windSpeed": "12.6",
+      "windDirection": "117.0"
+    },
+    "betting": {
+      "spread": null,
+      "overUnder": null,
+      "homeMoneyline": null,
+      "awayMoneyline": null
+    }
+  },
+  {
+    "id": 401531878,
+    "startDate": "2023-09-30T23:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": "NFL NET",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Paulson Stadium",
+      "city": "Statesboro",
+      "state": "GA"
+    },
+    "homeTeam": {
+      "id": 290,
+      "name": "Georgia Southern Eagles",
+      "conference": "Sun Belt",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 324,
+      "name": "Coastal Carolina Chanticleers",
+      "conference": "Sun Belt",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "81.5",
+      "description": "Cloudy",
+      "windSpeed": "10.1",
+      "windDirection": "159.0"
+    },
+    "betting": {
+      "spread": "-6.0",
+      "overUnder": "62.0",
+      "homeMoneyline": -230,
+      "awayMoneyline": 190
+    }
+  },
+  {
+    "id": 401531883,
+    "startDate": "2023-09-30T23:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": null,
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "M. M. Roberts Stadium",
+      "city": "Hattiesburg",
+      "state": "MS"
+    },
+    "homeTeam": {
+      "id": 2572,
+      "name": "Southern Mississippi Golden Eagles",
+      "conference": "Sun Belt",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 326,
+      "name": "Texas State Bobcats",
+      "conference": "Sun Belt",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "88.2",
+      "description": "Cloudy",
+      "windSpeed": "5.3",
+      "windDirection": "36.0"
+    },
+    "betting": {
+      "spread": "7.0",
+      "overUnder": "60.5",
+      "homeMoneyline": 215,
+      "awayMoneyline": -260
+    }
+  },
+  {
+    "id": 401531879,
+    "startDate": "2023-09-30T23:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": null,
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Georgia State Stadium",
+      "city": "Atlanta",
+      "state": "GA"
+    },
+    "homeTeam": {
+      "id": 2247,
+      "name": "Georgia State Panthers",
+      "conference": "Sun Belt",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 2653,
+      "name": "Troy Trojans",
+      "conference": "Sun Belt",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "78.4",
+      "description": "Clear",
+      "windSpeed": "4.5",
+      "windDirection": "141.0"
+    },
+    "betting": {
+      "spread": "-1.0",
+      "overUnder": "51.5",
+      "homeMoneyline": -115,
+      "awayMoneyline": -105
+    }
+  },
+  {
+    "id": 401525852,
+    "startDate": "2023-09-30T23:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": "FS1",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Gaylord Family Oklahoma Memorial Stadium",
+      "city": "Norman",
+      "state": "OK"
+    },
+    "homeTeam": {
+      "id": 201,
+      "name": "Oklahoma Sooners",
+      "conference": "Big 12",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 66,
+      "name": "Iowa State Cyclones",
+      "conference": "Big 12",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "89.2",
+      "description": "Clear",
+      "windSpeed": "12.7",
+      "windDirection": "149.0"
+    },
+    "betting": {
+      "spread": "-20.0",
+      "overUnder": "48.5",
+      "homeMoneyline": -1300,
+      "awayMoneyline": 725
+    }
+  },
+  {
+    "id": 401531414,
+    "startDate": "2023-09-30T23:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": null,
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Rice Stadium",
+      "city": "Houston",
+      "state": "TX"
+    },
+    "homeTeam": {
+      "id": 242,
+      "name": "Rice Owls",
+      "conference": "American Athletic",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 151,
+      "name": "East Carolina Pirates",
+      "conference": "American Athletic",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "87.6",
+      "description": "Fair",
+      "windSpeed": "13.4",
+      "windDirection": "121.0"
+    },
+    "betting": {
+      "spread": "-3.0",
+      "overUnder": "48.5",
+      "homeMoneyline": -145,
+      "awayMoneyline": 125
+    }
+  },
+  {
+    "id": 401525438,
+    "startDate": "2023-09-30T23:30:00.000Z",
+    "startTimeTBD": false,
+    "tv": "ABC",
+    "neutralSite": false,
+    "conferenceGame": false,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Wallace Wade Stadium",
+      "city": "Durham",
+      "state": "NC"
+    },
+    "homeTeam": {
+      "id": 150,
+      "name": "Duke Blue Devils",
+      "conference": "ACC",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 87,
+      "name": "Notre Dame Fighting Irish",
+      "conference": "FBS Independents",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "69.4",
+      "description": "Fair",
+      "windSpeed": "3.4",
+      "windDirection": "62.0"
+    },
+    "betting": {
+      "spread": "5.5",
+      "overUnder": "52.5",
+      "homeMoneyline": 180,
+      "awayMoneyline": -220
+    }
+  },
+  {
+    "id": 401520281,
+    "startDate": "2023-09-30T23:30:00.000Z",
+    "startTimeTBD": false,
+    "tv": "NBC",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Kinnick Stadium",
+      "city": "Iowa City",
+      "state": "IA"
+    },
+    "homeTeam": {
+      "id": 2294,
+      "name": "Iowa Hawkeyes",
+      "conference": "Big Ten",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 127,
+      "name": "Michigan State Spartans",
+      "conference": "Big Ten",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "84.7",
+      "description": "Clear",
+      "windSpeed": "8.1",
+      "windDirection": "164.0"
+    },
+    "betting": {
+      "spread": "-12.0",
+      "overUnder": "36.5",
+      "homeMoneyline": -470,
+      "awayMoneyline": 345
+    }
+  },
+  {
+    "id": 401531404,
+    "startDate": "2023-09-30T23:30:00.000Z",
+    "startTimeTBD": false,
+    "tv": "ESPNU",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Gerald J. Ford Stadium",
+      "city": "University Park",
+      "state": "TX"
+    },
+    "homeTeam": {
+      "id": 2567,
+      "name": "SMU Mustangs",
+      "conference": "American Athletic",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 2429,
+      "name": "Charlotte 49ers",
+      "conference": "American Athletic",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "93.0",
+      "description": "Clear",
+      "windSpeed": "12.3",
+      "windDirection": "117.0"
+    },
+    "betting": {
+      "spread": "-23.5",
+      "overUnder": "56.0",
+      "homeMoneyline": -1800,
+      "awayMoneyline": 850
+    }
+  },
+  {
+    "id": 401520291,
+    "startDate": "2023-09-30T23:30:00.000Z",
+    "startTimeTBD": false,
+    "tv": "SECN",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Neyland Stadium",
+      "city": "Knoxville",
+      "state": "TN"
+    },
+    "homeTeam": {
+      "id": 2633,
+      "name": "Tennessee Volunteers",
+      "conference": "SEC",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 2579,
+      "name": "South Carolina Gamecocks",
+      "conference": "SEC",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "76.8",
+      "description": "Clear",
+      "windSpeed": "4.9",
+      "windDirection": "322.0"
+    },
+    "betting": {
+      "spread": "-13.0",
+      "overUnder": "63.0",
+      "homeMoneyline": -490,
+      "awayMoneyline": 355
+    }
+  },
+  {
+    "id": 401532589,
+    "startDate": "2023-10-01T00:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": "CBSSN",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Falcon Stadium",
+      "city": "Colorado Springs",
+      "state": "CO"
+    },
+    "homeTeam": {
+      "id": 2005,
+      "name": "Air Force Falcons",
+      "conference": "Mountain West",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 21,
+      "name": "San Diego State Aztecs",
+      "conference": "Mountain West",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "68.0",
+      "description": "Cloudy",
+      "windSpeed": "8.1",
+      "windDirection": "247.0"
+    },
+    "betting": {
+      "spread": "-11.0",
+      "overUnder": "44.0",
+      "homeMoneyline": -430,
+      "awayMoneyline": 320
+    }
+  },
+  {
+    "id": 401525853,
+    "startDate": "2023-10-01T00:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": "ESPN2",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Amon G. Carter Stadium",
+      "city": "Fort Worth",
+      "state": "TX"
+    },
+    "homeTeam": {
+      "id": 2628,
+      "name": "TCU Horned Frogs",
+      "conference": "Big 12",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 277,
+      "name": "West Virginia Mountaineers",
+      "conference": "Big 12",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "91.4",
+      "description": "Clear",
+      "windSpeed": "11.9",
+      "windDirection": "127.0"
+    },
+    "betting": {
+      "spread": "-11.0",
+      "overUnder": "51.0",
+      "homeMoneyline": -435,
+      "awayMoneyline": 325
+    }
+  },
+  {
+    "id": 401531882,
+    "startDate": "2023-10-01T00:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": null,
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Malone Stadium",
+      "city": "Monroe",
+      "state": "LA"
+    },
+    "homeTeam": {
+      "id": 2433,
+      "name": "Louisiana Monroe Warhawks",
+      "conference": "Sun Belt",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 2026,
+      "name": "Appalachian State Mountaineers",
+      "conference": "Sun Belt",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "85.1",
+      "description": "Clear",
+      "windSpeed": "5.2",
+      "windDirection": "78.0"
+    },
+    "betting": {
+      "spread": "13.5",
+      "overUnder": "53.0",
+      "homeMoneyline": 390,
+      "awayMoneyline": -550
+    }
+  },
+  {
+    "id": 401525516,
+    "startDate": "2023-10-01T00:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": "ACCN",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Lane Stadium",
+      "city": "Blacksburg",
+      "state": "VA"
+    },
+    "homeTeam": {
+      "id": 259,
+      "name": "Virginia Tech Hokies",
+      "conference": "ACC",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 221,
+      "name": "Pittsburgh Panthers",
+      "conference": "ACC",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "66.4",
+      "description": "Fair",
+      "windSpeed": "4.9",
+      "windDirection": "54.0"
+    },
+    "betting": {
+      "spread": "2.5",
+      "overUnder": "40.0",
+      "homeMoneyline": 110,
+      "awayMoneyline": -130
+    }
+  },
+  {
+    "id": 401520285,
+    "startDate": "2023-10-01T01:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": "ESPN",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Davis Wade Stadium",
+      "city": "Starkville",
+      "state": "MS"
+    },
+    "homeTeam": {
+      "id": 344,
+      "name": "Mississippi State Bulldogs",
+      "conference": "SEC",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 333,
+      "name": "Alabama Crimson Tide",
+      "conference": "SEC",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "77.2",
+      "description": "Clear",
+      "windSpeed": "4.9",
+      "windDirection": "347.0"
+    },
+    "betting": {
+      "spread": "14.0",
+      "overUnder": "46.5",
+      "homeMoneyline": 430,
+      "awayMoneyline": -625
+    }
+  },
+  {
+    "id": 401524021,
+    "startDate": "2023-10-01T02:00:00.000Z",
+    "startTimeTBD": false,
+    "tv": "PAC12",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Arizona Stadium",
+      "city": "Tucson",
+      "state": "AZ"
+    },
+    "homeTeam": {
+      "id": 12,
+      "name": "Arizona Wildcats",
+      "conference": "Pac-12",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 264,
+      "name": "Washington Huskies",
+      "conference": "Pac-12",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "85.8",
+      "description": "Clear",
+      "windSpeed": "13.8",
+      "windDirection": "213.0"
+    },
+    "betting": {
+      "spread": "17.5",
+      "overUnder": "68.5",
+      "homeMoneyline": 575,
+      "awayMoneyline": -900
+    }
+  },
+  {
+    "id": 401532587,
+    "startDate": "2023-10-01T02:30:00.000Z",
+    "startTimeTBD": false,
+    "tv": "FS1",
+    "neutralSite": false,
+    "conferenceGame": true,
+    "status": "scheduled",
+    "period": null,
+    "clock": null,
+    "situation": null,
+    "possession": null,
+    "venue": {
+      "name": "Bulldog Stadium",
+      "city": "Fresno",
+      "state": "CA"
+    },
+    "homeTeam": {
+      "id": 278,
+      "name": "Fresno State Bulldogs",
+      "conference": "Mountain West",
+      "classification": "fbs",
+      "points": null
+    },
+    "awayTeam": {
+      "id": 2440,
+      "name": "Nevada Wolf Pack",
+      "conference": "Mountain West",
+      "classification": "fbs",
+      "points": null
+    },
+    "weather": {
+      "temperature": "65.8",
+      "description": "Fair",
+      "windSpeed": "5.8",
+      "windDirection": "308.0"
+    },
+    "betting": {
+      "spread": "-24.5",
+      "overUnder": "53.0",
+      "homeMoneyline": -2200,
+      "awayMoneyline": 1000
+    }
+  }
+]
