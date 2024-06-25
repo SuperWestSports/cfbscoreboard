@@ -3,13 +3,9 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-
-	//"io"
 	"log"
 	"net/http"
 	"os"
-
-	//"path/filepath"
 	"sync"
 	"text/template"
 	"time"
@@ -86,7 +82,6 @@ func response(req *http.Request) *http.Response {
 	if err != nil {
 		log.Fatal(err)
 	}
-	//writeSample(resp)
 	return resp
 }
 
@@ -108,24 +103,6 @@ func fetch(resp *http.Response) {
 		time.Sleep((5 * time.Minute))
 	}
 }
-
-// func writeSample(resp *http.Response) {
-// 	body, err := io.ReadAll(resp.Body)
-// 	if err != nil {
-// 		fmt.Println("Error reading response body:", err)
-// 		return
-// 	}
-// 	err = os.MkdirAll(filepath.Dir("data/scoreboard-preseason.json"), os.ModePerm)
-// 	if err != nil {
-// 		fmt.Println("Error creating directory:", err)
-// 		return
-// 	}
-
-// 	err = os.WriteFile("data/scoreboard-preseason.json", body, 0666)
-// 	if err != nil {
-// 		log.Fatal(err)
-// 	}
-// }
 
 func loadSample() error {
 	data, err := os.ReadFile("data/livegamedata.json")

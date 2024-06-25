@@ -20,12 +20,6 @@ func main() {
 	}
 
 	http.HandleFunc("/games", handleGames)
+	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets"))))
 	http.ListenAndServe(":8080", nil)
 }
-
-
-// fetch data should only be used in real-time for the current week of games
-// otherwise scheduled can be requested and saved. Final can be requested and saved
-// I need to build this logic with date/time and a few functions
-
-// Aug 24 - Dec 15
