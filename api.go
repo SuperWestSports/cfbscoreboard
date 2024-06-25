@@ -60,20 +60,21 @@ type Game struct {
 
 var (
 	requestUrl = "https://api.collegefootballdata.com/scoreboard"
-	gameData   []Game
-	//gameData = make(map[int]Game)
+	//gameData   []Game
+	gameData = make(map[int]Game)
 	dataMutex sync.RWMutex
 	tpl       *template.Template
 )
 
 func request() *http.Request {
-	KEY := "RMy62JITIczdOcIcgpVpLhfOsl4BlOFvLWsW/NGM/ZgiCcbL3bRK7JnbISToCImy"
+	//KEY := "RMy62JITIczdOcIcgpVpLhfOsl4BlOFvLWsW/NGM/ZgiCcbL3bRK7JnbISToCImy"
+	
 	req, err := http.NewRequest("GET", requestUrl, nil)
 	if err != nil {
 		log.Fatal(err)
 	}
 	req.Header.Add("Accept", "application/json")
-	req.Header.Add("Authorization", "Bearer "+KEY)
+	req.Header.Add("Authorization", "Bearer "+os.Getenv("CFB_KEY"))
 	return req
 }
 
@@ -118,7 +119,7 @@ func loadSample() error {
 	}
 
 	dataMutex.Lock()
-	gameData = games
+	//gameData = games
 	dataMutex.Unlock()
 
 	return nil
