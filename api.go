@@ -27,7 +27,7 @@ type Team struct {
 
 type Weather struct {
 	Temperature   string `json:"temperature"`
-	Description   string  `json:"description"`
+	Description   string `json:"description"`
 	WindSpeed     string `json:"windSpeed"`
 	WindDirection string `json:"windDirection"`
 }
@@ -35,8 +35,8 @@ type Weather struct {
 type Betting struct {
 	Spread        string `json:"spread"`
 	OverUnder     string `json:"overUnder"`
-	HomeMoneyline int     `json:"homeMoneyline"`
-	AwayMoneyline int     `json:"awayMoneyline"`
+	HomeMoneyline int    `json:"homeMoneyline"`
+	AwayMoneyline int    `json:"awayMoneyline"`
 }
 
 type Game struct {
@@ -61,14 +61,12 @@ type Game struct {
 var (
 	requestUrl = "https://api.collegefootballdata.com/scoreboard"
 	//gameData   []Game
-	gameData = make(map[int]Game)
+	gameData  = make(map[int]Game)
 	dataMutex sync.RWMutex
 	tpl       *template.Template
 )
 
 func request() *http.Request {
-	//KEY := "RMy62JITIczdOcIcgpVpLhfOsl4BlOFvLWsW/NGM/ZgiCcbL3bRK7JnbISToCImy"
-	
 	req, err := http.NewRequest("GET", requestUrl, nil)
 	if err != nil {
 		log.Fatal(err)
