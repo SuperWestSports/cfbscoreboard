@@ -11,7 +11,6 @@ func main() {
 	//res := response(req)
 	//go fetch(res)
 	loadSample()
-	ByConference(gameData)
 
 	var err error
 	tpl, err = template.ParseFiles("template.html")

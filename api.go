@@ -118,7 +118,7 @@ func loadSample() error {
 
 	dataMutex.Lock()
 	gameData = games
-	dataMutex.Unlock()	
+	dataMutex.Unlock()
 
 	return nil
 }
@@ -126,12 +126,12 @@ func loadSample() error {
 func ByConference(gameData []Game) map[string][]Game {
 	sortedConf := make(map[string][]Game)
 	conferences := []string{"ACC", "American Athletic", "Big 12", "Big Ten",
-													"Conference USA", "FBS Independent", "Mid-American",
-													"Mountain West", "Pac-12", "SEC", "Sun Belt" }
-	for i := range(gameData) {
-		for j := range(conferences) {
+		"Conference USA", "FBS Independent", "Mid-American",
+		"Mountain West", "Pac-12", "SEC", "Sun Belt"}
+	for i := range gameData {
+		for j := range conferences {
 			if gameData[i].AwayTeam.Conference == conferences[j] || gameData[i].HomeTeam.Conference == conferences[j] {
-				sortedConf[conferences[j]] = append(sortedConf[conferences[j]], gameData[i])		
+				sortedConf[conferences[j]] = append(sortedConf[conferences[j]], gameData[i])
 			}
 		}
 	}
