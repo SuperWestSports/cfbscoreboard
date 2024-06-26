@@ -60,8 +60,8 @@ type Game struct {
 
 var (
 	requestUrl = "https://api.collegefootballdata.com/scoreboard"
-	//gameData   []Game
-	gameData  = make(map[int]Game)
+	gameData   []Game
+	//gameData  = make(map[int]Game)
 	dataMutex sync.RWMutex
 	tpl       *template.Template
 )
@@ -117,10 +117,25 @@ func loadSample() error {
 	}
 
 	dataMutex.Lock()
-	//gameData = games
-	dataMutex.Unlock()
+	gameData = games
+	dataMutex.Unlock()	
 
 	return nil
+}
+
+func ByConference(gameData []Game) map[string][]Game {
+	sortedConf := make(map[string][]Game)
+	conferences := []string{"ACC", "American Athletic", "Big 12", "Big Ten",
+													"Conference USA", "FBS Independent", "Mid-American",
+													"Mountain West", "Pac-12", "SEC", "Sun Belt" }
+	for i := range(gameData) {
+		for j := range(conferences) {
+			if gameData[i].AwayTeam.Conference == conferences[j] || gameData[i].HomeTeam.Conference == conferences[j] {
+				sortedConf[conferences[j]] = append(sortedConf[conferences[j]], gameData[i])		
+			}
+		}
+	}
+	return sortedConf
 }
 
 func handleGames(w http.ResponseWriter, r *http.Request) {
@@ -128,7 +143,7 @@ func handleGames(w http.ResponseWriter, r *http.Request) {
 	defer dataMutex.RUnlock()
 
 	w.Header().Set("Content-Type", "text/html")
-	err := tpl.Execute(w, gameData)
+	err := tpl.Execute(w, ByConference(gameData))
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}

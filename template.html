@@ -4,48 +4,52 @@
   <meta charset="utf8"/>
   <title>College Football Scoreboard</title>
   <link rel="stylesheet" href="assets/style.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
   <h1>College Football Scoreboard</h1>
   <h2> Data provided by <a href="https://collegefootballdata.com/"> CollegeFootballData.com</a> </h2>
+  {{ range $key, $value := . }}
+  <h3>{{$key}}</h3>
   <div id="scoreboard">
     {{range .}}
-      <div class="tile">
-        {{if eq .Status "scheduled"}} 
-          {{if .StartTimeTBD }} Time TBD 
-          {{else}} {{.StartDate}} 
+        <div class="tile">
+          {{if eq .Status "scheduled"}} 
+            {{if .StartTimeTBD }} Time TBD 
+            {{else}} {{.StartDate}} 
+            {{end}}
+            {{ else if eq .Status "completed"}} Final
+            {{ else }} Live 
           {{end}}
-          {{ else if eq .Status "completed"}} Final
-          {{ else }} Live 
-        {{end}}
-        <br>
+          <br>
 
-        {{if eq .Period 1}} 1Q  {{end}}
-        {{if eq .Period 2}} 2Q {{end}} 
-        {{if eq .Period 3}} 3Q {{end}} 
-        {{if eq .Period 4}} 4Q {{end}}  
-        {{if .Clock}} {{.Clock}} <br>{{end}}
-          
-        {{.HomeTeam.Name}} {{if ne .Status "scheduled"}} {{.HomeTeam.Points}} {{end}}
-        {{if eq .Status "in_progress"}} {{if eq .Possession "home"}}  {{end}} {{end}}
-        <br>
+          {{if eq .Period 1}} 1Q  {{end}}
+          {{if eq .Period 2}} 2Q {{end}} 
+          {{if eq .Period 3}} 3Q {{end}} 
+          {{if eq .Period 4}} 4Q {{end}}  
+          {{if .Clock}} {{.Clock}} <br>{{end}}
+            
+          {{.HomeTeam.Name}} {{if ne .Status "scheduled"}} {{.HomeTeam.Points}} {{end}}
+          {{if eq .Status "in_progress"}} {{if eq .Possession "home"}}  {{end}} {{end}}
+          <br>
 
-        {{.AwayTeam.Name}} {{if ne .Status "scheduled"}} {{.AwayTeam.Points}} {{end}}
-        {{if eq .Status "in_progress"}}{{if eq .Possession "away"}}  {{end}} {{end}}
-        <br>
-          
-        {{if eq .Status "in_progress"}} {{.Situation}}<br>{{end}}  
+          {{.AwayTeam.Name}} {{if ne .Status "scheduled"}} {{.AwayTeam.Points}} {{end}}
+          {{if eq .Status "in_progress"}}{{if eq .Possession "away"}}  {{end}} {{end}}
+          <br>
+            
+          {{if eq .Status "in_progress"}} {{.Situation}}<br>{{end}}  
 
-        {{.Venue.Name}}, {{.Venue.City}}, {{.Venue.State}}
-        <br>
-          
-        {{if .TV}} TV: {{.TV}}<br>{{end}}
-              
-        <br>
-        <br>
-      </div>
+          {{.Venue.Name}}, {{.Venue.City}}, {{.Venue.State}}
+          <br>
+            
+          {{if .TV}} TV: {{.TV}}<br>{{end}}
+                
+          <br>
+          <br>
+        </div>
     {{end}}
   </div>
-  <script src="assets/script.js"></script>
+  {{ end }}
+  <script type="text/javascript" src="assets/script.js"></script>
 </body>
 </html>
