@@ -123,6 +123,30 @@ func loadSample() error {
 	return nil
 }
 
+func formatDate(gameData []Game) []Game {
+  for i := range gameData {
+    gameTime := gameData[i].StartDate
+
+    t, err := time.Parse(time.RFC3339, gameTime)
+    if err != nil {
+      panic(err)
+    }
+
+		loc, err := time.LoadLocation("America/Los_Angeles")
+    if err != nil {
+      panic(err)
+    }
+
+		inPT := t.In(loc)
+
+    formattedDate := inPT.Format("01/02 03:04 PM")
+    gameData[i].StartDate = formattedDate
+  }
+
+  return gameData
+}
+
+
 func ByConference(gameData []Game) map[string][]Game {
 	sortedConf := make(map[string][]Game)
 	conferences := []string{"ACC", "American Athletic", "Big 12", "Big Ten",
@@ -135,13 +159,13 @@ func ByConference(gameData []Game) map[string][]Game {
 			}
 		}
 	}
-	return sortedConf
+		return sortedConf
 }
 
 func handleGames(w http.ResponseWriter, r *http.Request) {
 	dataMutex.RLock()
 	defer dataMutex.RUnlock()
-
+	formatDate(gameData)
 	w.Header().Set("Content-Type", "text/html")
 	err := tpl.Execute(w, ByConference(gameData))
 	if err != nil {
