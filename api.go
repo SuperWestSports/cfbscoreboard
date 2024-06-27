@@ -62,9 +62,9 @@ var (
 	requestUrl = "https://api.collegefootballdata.com/scoreboard"
 	gameData   []Game
 	//gameData  = make(map[int]Game)
-	dataMutex sync.RWMutex
-	gamesTpl       *template.Template
-	featuredTpl       *template.Template
+	dataMutex   sync.RWMutex
+	gamesTpl    *template.Template
+	featuredTpl *template.Template
 )
 
 func request() *http.Request {
@@ -162,11 +162,10 @@ func ByConference(gameData []Game) map[string][]Game {
 	return sortedConf
 }
 
-
 func ByFeatured(gameData []Game) []Game {
 	featTeams := []Game{}
 	teams := []string{"Arizona Wildcats", "Arizona State Sun Devils", "California Golden Bears", "Oregon Ducks", "Oregon State Beavers",
-										"Standford Cardinal"}
+		"Standford Cardinal"}
 	for i := range gameData {
 		for j := range teams {
 			if gameData[i].AwayTeam.Name == teams[j] || gameData[i].HomeTeam.Name == teams[j] {
