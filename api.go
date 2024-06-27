@@ -63,7 +63,8 @@ var (
 	gameData   []Game
 	//gameData  = make(map[int]Game)
 	dataMutex sync.RWMutex
-	tpl       *template.Template
+	gamesTpl       *template.Template
+	featuredTpl       *template.Template
 )
 
 func request() *http.Request {
@@ -124,28 +125,27 @@ func loadSample() error {
 }
 
 func formatDate(gameData []Game) []Game {
-  for i := range gameData {
-    gameTime := gameData[i].StartDate
+	for i := range gameData {
+		gameTime := gameData[i].StartDate
 
-    t, err := time.Parse(time.RFC3339, gameTime)
-    if err != nil {
-      panic(err)
-    }
+		t, err := time.Parse(time.RFC3339, gameTime)
+		if err != nil {
+			panic(err)
+		}
 
 		loc, err := time.LoadLocation("America/Los_Angeles")
-    if err != nil {
-      panic(err)
-    }
+		if err != nil {
+			panic(err)
+		}
 
 		inPT := t.In(loc)
 
-    formattedDate := inPT.Format("01/02 03:04 PM")
-    gameData[i].StartDate = formattedDate
-  }
+		formattedDate := inPT.Format("01/02 03:04 PM")
+		gameData[i].StartDate = formattedDate
+	}
 
-  return gameData
+	return gameData
 }
-
 
 func ByConference(gameData []Game) map[string][]Game {
 	sortedConf := make(map[string][]Game)
@@ -159,15 +159,39 @@ func ByConference(gameData []Game) map[string][]Game {
 			}
 		}
 	}
-		return sortedConf
+	return sortedConf
+}
+
+
+func ByFeatured(gameData []Game) []Game {
+	featTeams := []Game{}
+	teams := []string{"Arizona Wildcats", "Arizona State Sun Devils", "California Golden Bears", "Oregon Ducks", "Oregon State Beavers",
+										"Standford Cardinal"}
+	for i := range gameData {
+		for j := range teams {
+			if gameData[i].AwayTeam.Name == teams[j] || gameData[i].HomeTeam.Name == teams[j] {
+				featTeams = append(featTeams, gameData[i])
+			}
+		}
+	}
+	return featTeams
 }
 
 func handleGames(w http.ResponseWriter, r *http.Request) {
 	dataMutex.RLock()
 	defer dataMutex.RUnlock()
-	formatDate(gameData)
 	w.Header().Set("Content-Type", "text/html")
-	err := tpl.Execute(w, ByConference(gameData))
+	err := gamesTpl.Execute(w, ByConference(gameData))
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+}
+
+func handleFeatured(w http.ResponseWriter, r *http.Request) {
+	dataMutex.RLock()
+	defer dataMutex.RUnlock()
+	w.Header().Set("Content-Type", "text/html")
+	err := featuredTpl.Execute(w, ByFeatured(gameData))
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}

@@ -9,8 +9,8 @@
 <body>
   <h1>College Football Scoreboard</h1>
   <h2> Data provided by <a href="https://collegefootballdata.com/"> CollegeFootballData.com</a> </h2>
-  {{ range $key, $value := . }}
-  <h3>{{$key}}</h3>
+  <h3>Featured Games</h3>
+  <h4><a href="/games">All conferences</a></h4>
   <div id="scoreboard">
     {{range .}}
         <div class="tile">
@@ -49,7 +49,6 @@
         </div>
     {{end}}
   </div>
-  {{ end }}
   <script type="text/javascript" src="assets/script.js"></script>
 </body>
 </html>
