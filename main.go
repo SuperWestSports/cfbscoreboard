@@ -10,9 +10,11 @@ import (
 var (
 	requestUrl = "https://api.collegefootballdata.com/scoreboard"
 	gameData  = make(map[int]Game)
+	recordData = make(map[int]Record)
 	dataMutex   sync.RWMutex
 	gamesTpl    *template.Template
 	featuredTpl *template.Template
+	standingsTpl *template.Template
 	prod = false
 )
 
@@ -23,6 +25,7 @@ func main() {
 		go fetch(res)
 	} else {
 			loadSample()
+			loadSampleRecords()
 	}
 	
 	var err error
@@ -38,9 +41,16 @@ func main() {
 		return
 	}
 
+	standingsTpl, err = template.ParseFiles("standings.html")
+	if err != nil {
+		fmt.Println("Error loading template:", err)
+		return
+	}
+
 	gameData = formatDate(gameData)
 	http.HandleFunc("/games", handleGames)
 	http.HandleFunc("/featured", handleFeatured)
+	http.HandleFunc("/standings", handleStandings)
 	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets"))))
 	http.ListenAndServe(":8080", nil)
 }

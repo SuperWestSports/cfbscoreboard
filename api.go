@@ -68,6 +68,27 @@ func loadSample() error {
   return nil
 }
 
+func loadSampleRecords() error {
+  data, err := os.ReadFile("data/samplerecords.json")
+  if err != nil {
+    return err
+  }
+
+  var records []Record
+  err = json.Unmarshal(data, &records)
+  if err != nil {
+    fmt.Println(err)
+    return err
+  }
+
+  dataMutex.Lock()
+  for _, record := range records {
+    recordData[record.ID] = record
+  }
+  dataMutex.Unlock()
+
+  return nil
+}
 
 func formatDate(gameData map[int]Game) map[int]Game {
   formattedData := make(map[int]Game, len(gameData)) 
@@ -110,6 +131,21 @@ func ByConference(gameData map[int]Game) map[string][]Game {
 	return sortedConf
 }
 
+func ByConferenceStandings(recordData map[int]Record) map[string][]Record {
+	sortedConf := make(map[string][]Record)
+	conferences := []string{"ACC", "American Athletic", "Big 12", "Big Ten",
+		"Conference USA", "FBS Independent", "Mid-American",
+		"Mountain West", "Pac-12", "SEC", "Sun Belt"}
+	for i := range recordData {
+		for j := range conferences {
+			if recordData[i].Conference == conferences[j] {
+				sortedConf[conferences[j]] = append(sortedConf[conferences[j]], recordData[i])
+			}
+		}
+	}
+	return sortedConf
+}
+
 func ByFeatured(gameData map[int]Game) []Game {
 	featTeams := []Game{}
 	teams := []string{"Arizona Wildcats", "Arizona State Sun Devils", "California Golden Bears", "Oregon Ducks", "Oregon State Beavers",
@@ -139,6 +175,16 @@ func handleFeatured(w http.ResponseWriter, r *http.Request) {
 	defer dataMutex.RUnlock()
 	w.Header().Set("Content-Type", "text/html")
 	err := featuredTpl.Execute(w, ByFeatured(gameData))
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+}
+
+func handleStandings(w http.ResponseWriter, r *http.Request) {
+	dataMutex.RLock()
+	defer dataMutex.RUnlock()
+	w.Header().Set("Content-Type", "text/html")
+	err := standingsTpl.Execute(w, ByConferenceStandings(recordData))
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}

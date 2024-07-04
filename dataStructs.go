@@ -1,6 +1,39 @@
 package main
 
+// Data Interface
+// type DataStore interface {
+// 	Load(string) error
+// }
+
+// func (g Game) Load(string) error {
+// 	return nil
+// }
+
+// func (r Record) Load(string) error {
+// 	return nil
+// }
+
 // Scoreboard
+
+type Game struct {
+	ID             int     `json:"id"`
+	StartDate      string  `json:"startDate"`
+	StartTimeTBD   bool    `json:"startTimeTBD"`
+	TV             string  `json:"tv"`
+	NeutralSite    bool    `json:"neutralSite"`
+	ConferenceGame bool    `json:"conferenceGame"`
+	Status         string  `json:"status"`
+	Period         int     `json:"period"`
+	Clock          string  `json:"clock"`
+	Situation      string  `json:"situation"`
+	Possession     string  `json:"possession"`
+	Venue          Venue   `json:"venue"`
+	HomeTeam       Team    `json:"homeTeam"`
+	AwayTeam       Team    `json:"awayTeam"`
+	Weather        Weather `json:"weather"`
+	Betting        Betting `json:"betting"`
+}
+
 type Venue struct {
 	Name  string `json:"name"`
 	City  string `json:"city"`
@@ -29,36 +62,11 @@ type Betting struct {
 	AwayMoneyline int    `json:"awayMoneyline"`
 }
 
-type Game struct {
-	ID             int     `json:"id"`
-	StartDate      string  `json:"startDate"`
-	StartTimeTBD   bool    `json:"startTimeTBD"`
-	TV             string  `json:"tv"`
-	NeutralSite    bool    `json:"neutralSite"`
-	ConferenceGame bool    `json:"conferenceGame"`
-	Status         string  `json:"status"`
-	Period         int     `json:"period"`
-	Clock          string  `json:"clock"`
-	Situation      string  `json:"situation"`
-	Possession     string  `json:"possession"`
-	Venue          Venue   `json:"venue"`
-	HomeTeam       Team    `json:"homeTeam"`
-	AwayTeam       Team    `json:"awayTeam"`
-	Weather        Weather `json:"weather"`
-	Betting        Betting `json:"betting"`
-}
 
 // Standings
-type Games struct {
-	Games	  int `json:"games"`
-	Wins	  int `json:"wins"`
-	Losses	int `json:"losses"`
-	Ties	  int `json:"ties"`
-}
-
 type Record struct {
 	Year	          int `json:"year"`
-	TeamId	        int `json:"teamId"`
+	ID	            int `json:"teamId"`
 	Team	          string `json:"team"`
 	Conference	    string `json:"conference"`
 	Division	      string `json:"division"`
@@ -68,3 +76,11 @@ type Record struct {
 	AwayGames       Games `json:"awayGames"`
 	
 }
+
+type Games struct {
+	Games	  int `json:"games"`
+	Wins	  int `json:"wins"`
+	Losses	int `json:"losses"`
+	Ties	  int `json:"ties"`
+}
+
