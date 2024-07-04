@@ -6,8 +6,6 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"sync"
-	"text/template"
 	"time"
 )
 
@@ -58,14 +56,7 @@ type Game struct {
 	Betting        Betting `json:"betting"`
 }
 
-var (
-	requestUrl = "https://api.collegefootballdata.com/scoreboard"
-	gameData   []Game
-	//gameData  = make(map[int]Game)
-	dataMutex   sync.RWMutex
-	gamesTpl    *template.Template
-	featuredTpl *template.Template
-)
+
 
 func request() *http.Request {
 	req, err := http.NewRequest("GET", requestUrl, nil)
@@ -105,49 +96,55 @@ func fetch(resp *http.Response) {
 }
 
 func loadSample() error {
-	data, err := os.ReadFile("data/livegamedata.json")
-	if err != nil {
-		return err
-	}
+  data, err := os.ReadFile("data/livegamedata.json")
+  if err != nil {
+    return err
+  }
 
-	var games []Game
-	err = json.Unmarshal(data, &games)
-	if err != nil {
-		fmt.Println(err)
-		return err
-	}
+  var games []Game
+  err = json.Unmarshal(data, &games)
+  if err != nil {
+    fmt.Println(err)
+    return err
+  }
 
-	dataMutex.Lock()
-	gameData = games
-	dataMutex.Unlock()
+  dataMutex.Lock()
+  for _, game := range games {
+    gameData[game.ID] = game
+  }
+  dataMutex.Unlock()
 
-	return nil
+  return nil
 }
 
-func formatDate(gameData []Game) []Game {
-	for i := range gameData {
-		gameTime := gameData[i].StartDate
 
-		t, err := time.Parse(time.RFC3339, gameTime)
-		if err != nil {
-			panic(err)
-		}
+func formatDate(gameData map[int]Game) map[int]Game {
+  formattedData := make(map[int]Game, len(gameData)) 
+  for i, game := range gameData {
+    gameCopy := game
+    gameTime := gameCopy.StartDate
 
-		loc, err := time.LoadLocation("America/Los_Angeles")
-		if err != nil {
-			panic(err)
-		}
+    t, err := time.Parse(time.RFC3339, gameTime)
+    if err != nil {
+      panic(err)
+    }
 
-		inPT := t.In(loc)
+    loc, err := time.LoadLocation("America/Los_Angeles")
+    if err != nil {
+      panic(err)
+    }
 
-		formattedDate := inPT.Format("01/02 03:04 PM")
-		gameData[i].StartDate = formattedDate
-	}
+    inPT := t.In(loc)
+    formattedDate := inPT.Format("01/02 03:04 PM")
 
-	return gameData
+    gameCopy.StartDate = formattedDate
+    formattedData[i] = gameCopy 
+  }
+  return formattedData
 }
 
-func ByConference(gameData []Game) map[string][]Game {
+
+func ByConference(gameData map[int]Game) map[string][]Game {
 	sortedConf := make(map[string][]Game)
 	conferences := []string{"ACC", "American Athletic", "Big 12", "Big Ten",
 		"Conference USA", "FBS Independent", "Mid-American",
@@ -162,7 +159,7 @@ func ByConference(gameData []Game) map[string][]Game {
 	return sortedConf
 }
 
-func ByFeatured(gameData []Game) []Game {
+func ByFeatured(gameData map[int]Game) []Game {
 	featTeams := []Game{}
 	teams := []string{"Arizona Wildcats", "Arizona State Sun Devils", "California Golden Bears", "Oregon Ducks", "Oregon State Beavers",
 		"Standford Cardinal"}
