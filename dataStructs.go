@@ -1,18 +1,5 @@
 package main
 
-// Data Interface
-// type DataStore interface {
-// 	Load(string) error
-// }
-
-// func (g Game) Load(string) error {
-// 	return nil
-// }
-
-// func (r Record) Load(string) error {
-// 	return nil
-// }
-
 // Scoreboard
 
 type Game struct {

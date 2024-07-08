@@ -46,49 +46,48 @@ func fetch(resp *http.Response) {
 	}
 }
 
-func loadSample() error {
-  data, err := os.ReadFile("data/livegamedata.json")
-  if err != nil {
-    return err
-  }
-
-  var games []Game
-  err = json.Unmarshal(data, &games)
+func readSample(filename string) []byte {
+	data, err := os.ReadFile("data/" + filename)
   if err != nil {
     fmt.Println(err)
-    return err
   }
+	return data
+}
 
+func unmarshalSampleGames(data []byte) error{
+  err := json.Unmarshal(data, &games)
+  if err != nil {
+    fmt.Println(err)
+		return err
+  }
+	return nil
+}
+
+func loadSampleGames(games []Game) {
   dataMutex.Lock()
   for _, game := range games {
     gameData[game.ID] = game
   }
   dataMutex.Unlock()
-
-  return nil
 }
 
-func loadSampleRecords() error {
-  data, err := os.ReadFile("data/samplerecords.json")
-  if err != nil {
-    return err
-  }
-
-  var records []Record
-  err = json.Unmarshal(data, &records)
+func unmarshalSampleRecords(data []byte) error{
+  err := json.Unmarshal(data, &records)
   if err != nil {
     fmt.Println(err)
-    return err
+		return err
   }
+	return nil
+}
 
+func loadSampleRecords(records []Record) {
   dataMutex.Lock()
   for _, record := range records {
     recordData[record.ID] = record
   }
   dataMutex.Unlock()
-
-  return nil
 }
+
 
 func formatDate(gameData map[int]Game) map[int]Game {
   formattedData := make(map[int]Game, len(gameData)) 

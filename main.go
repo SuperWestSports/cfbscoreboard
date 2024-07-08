@@ -9,6 +9,8 @@ import (
 
 var (
 	requestUrl = "https://api.collegefootballdata.com/scoreboard"
+	games []Game
+	records []Record
 	gameData  = make(map[int]Game)
 	recordData = make(map[int]Record)
 	dataMutex   sync.RWMutex
@@ -24,8 +26,14 @@ func main() {
 		res := response(req)
 		go fetch(res)
 	} else {
-			loadSample()
-			loadSampleRecords()
+			gamesJSON := readSample("livegamedata.json")
+			unmarshalSampleGames(gamesJSON)
+			loadSampleGames(games)
+			
+			recordsJSON := readSample("samplerecords.json")
+			unmarshalSampleRecords(recordsJSON)
+			loadSampleRecords(records)
+
 	}
 	
 	var err error
