@@ -1,3 +1,35 @@
+.conference {
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.conference h2 {
+  margin-top: 0; 
+}
+
+.standings {
+  border: 1px solid #ddd;
+  width: 600px; 
+}
+
+
+.table-header,
+.team-row {
+  display: flex;
+  padding: 0.25rem 0.5rem; 
+  border-bottom: 1px solid #ddd;
+}
+
+.table-header div,
+.team-row div {
+  flex: 1; 
+}
+
+.team-name {
+  font-weight: normal;
+}
+
+
 #scoreboard {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
