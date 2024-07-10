@@ -9,122 +9,136 @@ import (
 	"time"
 )
 
-func request(url string, year string) *http.Request {
-	req, err := http.NewRequest("GET", url + year, nil)
+func fetchGamesData(url string) error {
+	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
-		log.Fatal(err)
+		return fmt.Errorf("failed to create request: %v", err)
 	}
+
 	req.Header.Add("Accept", "application/json")
 	req.Header.Add("Authorization", "Bearer "+os.Getenv("CFB_KEY"))
-	return req
-}
 
-func response(req *http.Request) *http.Response {
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
-		log.Fatal(err)
+		return fmt.Errorf("failed to execute request: %v", err)
 	}
-	return resp
-}
+	defer resp.Body.Close()
 
-func decodeGames(resp *http.Response) {
-		err := json.NewDecoder(resp.Body).Decode(&games)
-		if err != nil {
-			fmt.Println("Error decoding JSON", err)
-		}
-}
+	if resp.StatusCode != http.StatusOK {
+		return fmt.Errorf("unexpected status code: %v", resp.StatusCode)
+	}
 
-func loadGames() {
+	var games []Game
+	if err := json.NewDecoder(resp.Body).Decode(&games); err != nil {
+		return fmt.Errorf("failed to decode response: %v", err)
+	}
+
 	dataMutex.Lock()
-		for _, game := range games {
-			gameData[game.ID] = game
-		}
-		dataMutex.Unlock()
-}
-
-func decodeRecords(resp *http.Response) {
-	err := json.NewDecoder(resp.Body).Decode(&records)
-	if err != nil {
-		fmt.Println("Error decoding JSON", err)
+	for _, game := range games {
+		gameData[game.ID] = game
 	}
+	dataMutex.Unlock()
+
+	return nil
 }
 
-func loadRecords() {
-dataMutex.Lock()
+func fetchRecordsData(url, year string) error {
+	req, err := http.NewRequest("GET", url+year, nil)
+	if err != nil {
+		return fmt.Errorf("failed to create request: %v", err)
+	}
+
+	req.Header.Add("Accept", "application/json")
+	req.Header.Add("Authorization", "Bearer "+os.Getenv("CFB_KEY"))
+
+	resp, err := http.DefaultClient.Do(req)
+	if err != nil {
+		return fmt.Errorf("failed to execute request: %v", err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != http.StatusOK {
+		return fmt.Errorf("unexpected status code: %v", resp.StatusCode)
+	}
+
+	var records []Record
+	if err := json.NewDecoder(resp.Body).Decode(&records); err != nil {
+		return fmt.Errorf("failed to decode response: %v", err)
+	}
+
+	dataMutex.Lock()
 	for _, record := range records {
 		recordData[record.ID] = record
 	}
 	dataMutex.Unlock()
+
+	return nil
 }
 
-func readSample(filename string) []byte {
+func fetchSampleGamesData(filename string) error {
 	data, err := os.ReadFile("data/" + filename)
-  if err != nil {
-    fmt.Println(err)
-  }
-	return data
-}
+	if err != nil {
+		fmt.Println(err)
+	}
 
-func unmarshalSampleGames(data []byte) error{
-  err := json.Unmarshal(data, &games)
-  if err != nil {
-    fmt.Println(err)
-		return err
-  }
+	var games []Game
+	err = json.Unmarshal(data, &games)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	dataMutex.Lock()
+	for _, game := range games {
+		gameData[game.ID] = game
+	}
+	dataMutex.Unlock()
 	return nil
 }
 
-func loadSampleGames() {
-  dataMutex.Lock()
-  for _, game := range games {
-    gameData[game.ID] = game
-  }
-  dataMutex.Unlock()
-}
+func fetchSampleRecordsData(filename string) error {
+	data, err := os.ReadFile("data/" + filename)
+	if err != nil {
+		fmt.Println(err)
+	}
 
-func unmarshalSampleRecords(data []byte) error{
-  err := json.Unmarshal(data, &records)
-  if err != nil {
-    fmt.Println(err)
-		return err
-  }
+	var records []Record
+	err = json.Unmarshal(data, &records)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	dataMutex.Lock()
+	for _, record := range records {
+		recordData[record.ID] = record
+	}
+	dataMutex.Unlock()
 	return nil
 }
-
-func loadSampleRecords() {
-  dataMutex.Lock()
-  for _, record := range records {
-    recordData[record.ID] = record
-  }
-  dataMutex.Unlock()
-}
-
 
 func formatDate(gameData map[int]Game) map[int]Game {
-  formattedData := make(map[int]Game, len(gameData)) 
-  for i, game := range gameData {
-    gameCopy := game
-    gameTime := gameCopy.StartDate
+	formattedData := make(map[int]Game, len(gameData))
+	for i, game := range gameData {
+		gameCopy := game
+		gameTime := gameCopy.StartDate
 
-    t, err := time.Parse(time.RFC3339, gameTime)
-    if err != nil {
-      panic(err)
-    }
+		t, err := time.Parse(time.RFC3339, gameTime)
+		if err != nil {
+			panic(err)
+		}
 
-    loc, err := time.LoadLocation("America/Los_Angeles")
-    if err != nil {
-      panic(err)
-    }
+		loc, err := time.LoadLocation("America/Los_Angeles")
+		if err != nil {
+			panic(err)
+		}
 
-    inPT := t.In(loc)
-    formattedDate := inPT.Format("01/02 03:04 PM")
+		inPT := t.In(loc)
+		formattedDate := inPT.Format("01/02 03:04 PM")
 
-    gameCopy.StartDate = formattedDate
-    formattedData[i] = gameCopy 
-  }
-  return formattedData
+		gameCopy.StartDate = formattedDate
+		formattedData[i] = gameCopy
+	}
+	return formattedData
 }
-
 
 func ByConference(gameData map[int]Game) map[string][]Game {
 	sortedConf := make(map[string][]Game)
@@ -135,21 +149,6 @@ func ByConference(gameData map[int]Game) map[string][]Game {
 		for j := range conferences {
 			if gameData[i].AwayTeam.Conference == conferences[j] || gameData[i].HomeTeam.Conference == conferences[j] {
 				sortedConf[conferences[j]] = append(sortedConf[conferences[j]], gameData[i])
-			}
-		}
-	}
-	return sortedConf
-}
-
-func ByConferenceStandings(recordData map[int]Record) map[string][]Record {
-	sortedConf := make(map[string][]Record)
-	conferences := []string{"ACC", "American Athletic", "Big 12", "Big Ten",
-		"Conference USA", "FBS Independent", "Mid-American",
-		"Mountain West", "Pac-12", "SEC", "Sun Belt"}
-	for i := range recordData {
-		for j := range conferences {
-			if recordData[i].Conference == conferences[j] {
-				sortedConf[conferences[j]] = append(sortedConf[conferences[j]], recordData[i])
 			}
 		}
 	}
@@ -168,6 +167,21 @@ func ByFeatured(gameData map[int]Game) []Game {
 		}
 	}
 	return featTeams
+}
+
+func ByConferenceStandings(recordData map[int]Record) map[string][]Record {
+	sortedConf := make(map[string][]Record)
+	conferences := []string{"ACC", "American Athletic", "Big 12", "Big Ten",
+		"Conference USA", "FBS Independent", "Mid-American",
+		"Mountain West", "Pac-12", "SEC", "Sun Belt"}
+	for i := range recordData {
+		for j := range conferences {
+			if recordData[i].Conference == conferences[j] {
+				sortedConf[conferences[j]] = append(sortedConf[conferences[j]], recordData[i])
+			}
+		}
+	}
+	return sortedConf
 }
 
 func handleGames(w http.ResponseWriter, r *http.Request) {

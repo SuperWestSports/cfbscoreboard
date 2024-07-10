@@ -49,25 +49,22 @@ type Betting struct {
 	AwayMoneyline int    `json:"awayMoneyline"`
 }
 
-
 // Standings
 type Record struct {
-	Year	          int `json:"year"`
-	ID	            int `json:"teamId"`
-	Team	          string `json:"team"`
-	Conference	    string `json:"conference"`
-	Division	      string `json:"division"`
-	Total           Games `json:"total"`
-	ConferenceGames Games `json:"conferenceGames"`
-	HomeGames	      Games `json:"homeGames"`
-	AwayGames       Games `json:"awayGames"`
-	
+	Year            int    `json:"year"`
+	ID              int    `json:"teamId"`
+	Team            string `json:"team"`
+	Conference      string `json:"conference"`
+	Division        string `json:"division"`
+	Total           Games  `json:"total"`
+	ConferenceGames Games  `json:"conferenceGames"`
+	HomeGames       Games  `json:"homeGames"`
+	AwayGames       Games  `json:"awayGames"`
 }
 
 type Games struct {
-	Games	  int `json:"games"`
-	Wins	  int `json:"wins"`
-	Losses	int `json:"losses"`
-	Ties	  int `json:"ties"`
+	Games  int `json:"games"`
+	Wins   int `json:"wins"`
+	Losses int `json:"losses"`
+	Ties   int `json:"ties"`
 }
-

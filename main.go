@@ -8,43 +8,28 @@ import (
 )
 
 var (
-	requestGamesUrl = "https://api.collegefootballdata.com/scoreboard"
-	requestRecordsUrl = "https://api.collegefootballdata.com/records"
-	yearRecord = "?year=2023"
-	games []Game
-	records []Record
-	gameData  = make(map[int]Game)
-	recordData = make(map[int]Record)
-	dataMutex   sync.RWMutex
-	gamesTpl    *template.Template
-	featuredTpl *template.Template
+	gameData     = make(map[int]Game)
+	recordData   = make(map[int]Record)
+	dataMutex    sync.RWMutex
+	gamesTpl     *template.Template
+	featuredTpl  *template.Template
 	standingsTpl *template.Template
-	prod = true
+	prod         = false
 )
 
 func main() {
 	if prod {
-		gamesReq := request(requestGamesUrl, "")
-		gamesRes := response(gamesReq)
-		decodeGames(gamesRes)
-		loadGames()
+		requestGamesUrl := "https://api.collegefootballdata.com/scoreboard"
+		requestRecordsUrl := "https://api.collegefootballdata.com/records"
+		yearRecord := "?year=2023"
+		fetchGamesData(requestGamesUrl)
+		fetchRecordsData(requestRecordsUrl, yearRecord)
 
-		recordsReq := request(requestRecordsUrl, yearRecord)
-		recordsRes := response(recordsReq)
-		decodeRecords(recordsRes)
-		loadRecords()
-		
 	} else {
-			gamesJSON := readSample("livegamedata.json")
-			unmarshalSampleGames(gamesJSON)
-			loadSampleGames()
-			
-			recordsJSON := readSample("samplerecords.json")
-			unmarshalSampleRecords(recordsJSON)
-			loadSampleRecords()
-
+		fetchSampleGamesData("livegamedata.json")
+		fetchSampleRecordsData("samplerecords.json")
 	}
-	
+
 	var err error
 	gamesTpl, err = template.ParseFiles("templates/games.html")
 	templateError(err)
