@@ -9,8 +9,8 @@ import (
 	"time"
 )
 
-func request() *http.Request {
-	req, err := http.NewRequest("GET", requestUrl, nil)
+func request(url string, year string) *http.Request {
+	req, err := http.NewRequest("GET", url + year, nil)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -27,23 +27,34 @@ func response(req *http.Request) *http.Response {
 	return resp
 }
 
-func fetch(resp *http.Response) {
-	for {
-		var games []Game
+func decodeGames(resp *http.Response) {
 		err := json.NewDecoder(resp.Body).Decode(&games)
 		if err != nil {
 			fmt.Println("Error decoding JSON", err)
-			time.Sleep(10 * time.Minute)
-			continue
 		}
+}
 
-		dataMutex.Lock()
+func loadGames() {
+	dataMutex.Lock()
 		for _, game := range games {
 			gameData[game.ID] = game
 		}
 		dataMutex.Unlock()
-		time.Sleep((5 * time.Minute))
+}
+
+func decodeRecords(resp *http.Response) {
+	err := json.NewDecoder(resp.Body).Decode(&records)
+	if err != nil {
+		fmt.Println("Error decoding JSON", err)
 	}
+}
+
+func loadRecords() {
+dataMutex.Lock()
+	for _, record := range records {
+		recordData[record.ID] = record
+	}
+	dataMutex.Unlock()
 }
 
 func readSample(filename string) []byte {
@@ -63,7 +74,7 @@ func unmarshalSampleGames(data []byte) error{
 	return nil
 }
 
-func loadSampleGames(games []Game) {
+func loadSampleGames() {
   dataMutex.Lock()
   for _, game := range games {
     gameData[game.ID] = game
@@ -80,7 +91,7 @@ func unmarshalSampleRecords(data []byte) error{
 	return nil
 }
 
-func loadSampleRecords(records []Record) {
+func loadSampleRecords() {
   dataMutex.Lock()
   for _, record := range records {
     recordData[record.ID] = record

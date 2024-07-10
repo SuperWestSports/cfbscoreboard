@@ -8,7 +8,9 @@ import (
 )
 
 var (
-	requestUrl = "https://api.collegefootballdata.com/scoreboard"
+	requestGamesUrl = "https://api.collegefootballdata.com/scoreboard"
+	requestRecordsUrl = "https://api.collegefootballdata.com/records"
+	yearRecord = "?year=2023"
 	games []Game
 	records []Record
 	gameData  = make(map[int]Game)
@@ -17,43 +19,41 @@ var (
 	gamesTpl    *template.Template
 	featuredTpl *template.Template
 	standingsTpl *template.Template
-	prod = false
+	prod = true
 )
 
 func main() {
 	if prod {
-		req := request()
-		res := response(req)
-		go fetch(res)
+		gamesReq := request(requestGamesUrl, "")
+		gamesRes := response(gamesReq)
+		decodeGames(gamesRes)
+		loadGames()
+
+		recordsReq := request(requestRecordsUrl, yearRecord)
+		recordsRes := response(recordsReq)
+		decodeRecords(recordsRes)
+		loadRecords()
+		
 	} else {
 			gamesJSON := readSample("livegamedata.json")
 			unmarshalSampleGames(gamesJSON)
-			loadSampleGames(games)
+			loadSampleGames()
 			
 			recordsJSON := readSample("samplerecords.json")
 			unmarshalSampleRecords(recordsJSON)
-			loadSampleRecords(records)
+			loadSampleRecords()
 
 	}
 	
 	var err error
-	gamesTpl, err = template.ParseFiles("games.html")
-	if err != nil {
-		fmt.Println("Error loading template:", err)
-		return
-	}
+	gamesTpl, err = template.ParseFiles("templates/games.html")
+	templateError(err)
 
-	featuredTpl, err = template.ParseFiles("featured.html")
-	if err != nil {
-		fmt.Println("Error loading template:", err)
-		return
-	}
+	featuredTpl, err = template.ParseFiles("templates/featured.html")
+	templateError(err)
 
-	standingsTpl, err = template.ParseFiles("standings.html")
-	if err != nil {
-		fmt.Println("Error loading template:", err)
-		return
-	}
+	standingsTpl, err = template.ParseFiles("templates/standings.html")
+	templateError(err)
 
 	gameData = formatDate(gameData)
 	http.HandleFunc("/games", handleGames)
@@ -61,4 +61,10 @@ func main() {
 	http.HandleFunc("/standings", handleStandings)
 	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets"))))
 	http.ListenAndServe(":8080", nil)
+}
+
+func templateError(err error) {
+	if err != nil {
+		fmt.Println("Error loading template:", err)
+	}
 }
