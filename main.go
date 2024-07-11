@@ -11,6 +11,7 @@ var (
 	gameData     = make(map[int]Game)
 	recordData   = make(map[int]Record)
 	dataMutex    sync.RWMutex
+	indexTpl		 *template.Template
 	gamesTpl     *template.Template
 	featuredTpl  *template.Template
 	standingsTpl *template.Template
@@ -31,6 +32,9 @@ func main() {
 	}
 
 	var err error
+	indexTpl, err = template.ParseFiles("templates/index.html")
+	templateError(err)
+
 	gamesTpl, err = template.ParseFiles("templates/games.html")
 	templateError(err)
 
@@ -40,7 +44,9 @@ func main() {
 	standingsTpl, err = template.ParseFiles("templates/standings.html")
 	templateError(err)
 
-	gameData = formatDate(gameData)
+	gameData = formatDate()
+
+	http.HandleFunc("/", handleIndex)
 	http.HandleFunc("/games", handleGames)
 	http.HandleFunc("/featured", handleFeatured)
 	http.HandleFunc("/standings", handleStandings)
@@ -53,3 +59,4 @@ func templateError(err error) {
 		fmt.Println("Error loading template:", err)
 	}
 }
+

@@ -59,7 +59,7 @@ type Record struct {
 	Total           Games  `json:"total"`
 	ConferenceGames Games  `json:"conferenceGames"`
 	HomeGames       Games  `json:"homeGames"`
-	AwayGames       Games  `json:"awayGames"`
+	AwayGames       Games  `json:"awayGames"` 
 }
 
 type Games struct {
@@ -67,4 +67,5 @@ type Games struct {
 	Wins   int `json:"wins"`
 	Losses int `json:"losses"`
 	Ties   int `json:"ties"`
+	Pct		 float64
 }
